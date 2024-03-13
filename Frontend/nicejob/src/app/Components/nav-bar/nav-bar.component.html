@@ -1,9 +1,14 @@
 <div class="navContainer">
     <div class="nav">
+        <!-- <div *ngIf="isToggled" class="hamburger-menu" onclick="toggleMenu()"> -->
+            <!-- <i class="fa-solid fa-bars" ></i> -->
+        <!-- </div> -->
         <div class="logonSearch">
             <!-- <div class="logoImg">
                 <p>STRIVECRAFT</p>
             </div> -->
+            <i id="hamburger" class="fa-solid fa-bars"></i>
+
             <img src="../../../assets/strive-craft-high-resolution-logo-transparent (1).png" alt="" width="70px" id="logoImg" style="cursor: pointer;">
             <div class="search">
                 <input type="text" name="search" id="searchField" placeholder="Search">
@@ -13,10 +18,10 @@
             </div>
         </div>
         <div class="links">
-            <span>Apply as a specialist</span>
-            <span>Hire top talent</span>
-            <span>Login</span>
-            <button id="signUp">Sign Up</button>
+            <span routerLink="/register-specialist">Apply as a specialist</span>
+            <span routerLink="/register">Hire top talent</span>
+            <span id="login" routerLink="/login">Login</span>
+            <button routerLink="register" id="signUp">Sign Up</button>
         </div>
     </div>
 </div>
@@ -28,3 +33,4 @@
     <div >Landscaping <i class="fa-solid fa-angle-down"></i></div>
     <div >Graphic Design <i class="fa-solid fa-angle-down"></i></div>
 </div>
+<router-outlet></router-outlet>
