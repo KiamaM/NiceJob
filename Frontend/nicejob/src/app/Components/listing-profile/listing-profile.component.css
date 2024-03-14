@@ -1,0 +1,53 @@
+app-nav-bar{
+    color: white;
+    --categoriesHover:black;
+    --categoiesBgColor:rgba(0, 0, 0, 0.062);
+}
+
+
+.listingProfileContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    gap: 10px;
+
+}
+
+.listingProfileContainer h2{
+    /* text-align: center; */
+    color: #084B33;
+}
+
+.rating i{
+    color: #00CC83; 
+}
+
+.rating{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 300;
+    width: 80%;
+}
+
+#available{
+    color: rgba(0, 0, 0, 0.568);
+    font-size: 18px;
+}
+
+.image img{
+    width: 100%;
+}

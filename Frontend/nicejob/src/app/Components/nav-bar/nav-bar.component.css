@@ -1,7 +1,8 @@
 .navContainer{
-    width: 99vw;
+    width: var(99vw);
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     height: 9vh;
@@ -10,7 +11,7 @@
 
 
 .nav{
-    width:  90%;
+    width:  80%;
     display: flex;   
     justify-content: space-between; 
     align-items: center;
@@ -23,7 +24,7 @@
 .logonSearch{
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
     width: 30%;
 }
 
@@ -32,8 +33,8 @@
     align-items: center;
     background-color: white;
     border-radius: 6px;
-    padding: 8px;
-    width: 60%;
+    padding: 5px;
+    width: 70%;
     font-weight: 100;
 }
 
@@ -135,33 +136,46 @@
 }
 
 .categories{
-  width: 99vw;
+  width: var(--categoriesWidth, 100vw);
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 70px;
   align-items: center;
-  color: #00CC83;  
-  /* background-color: red; */
+  color:var(--categoriesFontColor,#00CC83);
+  padding:10px 0px;
+  background-color: var(--categoiesBgColor,transparent);
+  /* background-color: rgba(0, 0, 0, 0.5); */
+
+}
+
+.fiterBy{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #2ea44f; */
+  cursor: pointer;
+
 }
 
 i{
   margin-left: 5px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
-.categories div{
+/* .categories div{
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
+} */
 
-.categories div:hover{
-  color: white;
+.fiterBy div:hover{
+  color:var(--categoriesHover, white);
 }
 
 
 @media only screen and (max-width: 430px){
+
 .nav{
   /* background-color: yellow; */
   width: 100vw;

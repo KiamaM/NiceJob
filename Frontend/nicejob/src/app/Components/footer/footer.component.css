@@ -3,7 +3,7 @@ footer {
     padding: 20px;
     border-top: 1px solid black;
     margin-top: 20px;
-    width: 98.5vw;
+    width: var(--footerWidth, 98.5vw);
     box-sizing: border-box;
   }
   
@@ -11,6 +11,7 @@ footer {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    box-sizing: border-box;
   }
   
   .footer-section {
