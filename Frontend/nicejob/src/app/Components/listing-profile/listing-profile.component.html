@@ -2,42 +2,56 @@
 <div class="listingProfileContainer">
     <div class="content">
         <h2>Fork and Knife Catering Services</h2>
-        <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <span>5.0(1.7K Reviews)</span>
-        </div>
-        <p id="available">Available</p>
-        <div class="service">
-            <p>Service: Catering</p>
-            <p>Daily Rate: Ksh 5000</p>
-        </div>
-        <p>Opens: 7:00 AM to 5.00 PM</p>
-        <div class="buttons">
-            <button>Make a Reservation</button>
-            <button>Message</button>
-            <button>Write a Review</button>
-        </div>
         <div class="image">
             <img src="../../../assets/1.png" alt="">
+            <img src="../../../assets/Events Img.jpg" alt="">
+            <img src="../../../assets/landscape.jpg" alt="">
+            <img src="../../../assets/Photography img.jpg" alt="">            
         </div>
-        <h3>About Us</h3>
-        <p> Embark on an adventure into a world of enchanting illustrations, uniquely designed for the realm of children's literature. Allow me to inject dynamic vitality into your story through the extraordinary journey</p>
-        <p>Kindly schedule an appointment to customize the food options to your liking. Thank you.</p>
+        <div class="rateAvailable">
+            <!-- <div class="rating">            
+                <i class="fa-solid fa-star"></i>
+                <span>5.0(1.7K Reviews)</span>
+            </div>
+            <p id="available">Available</p> -->
+        </div>
+        <div class="service">
+            <p>Service: Catering</p>
+            <p>Opens: 7:00 AM to 5.00 PM</p>
+            <p>Daily Rate: Ksh 5000</p>
+        </div>
+        <div class="buttons">
+            <button routerLink="/appointment-page"><i class="fa-regular fa-calendar-check"></i>  Make a Reservation</button>
+            <button><i class="fa-solid fa-message"></i> Chat</button>
+            <button><i class="fa-regular fa-star-half-stroke"></i> Write a Review</button>
+        </div>
+        <div class="about">
+            <h3>About Us</h3>
+            <p> Embark on an adventure into a world of enchanting illustrations, uniquely designed for the realm of children's literature. Allow me to inject dynamic vitality into your story through the extraordinary journey</p>
+            <p>Kindly schedule an appointment to customize the food options to your liking. <br> Thank you.</p>
+        </div>
         <h3>Reviews</h3>
-        <img src="../../../assets/prof Pic.jpg" alt="">    
-        <span>Billy S.</span>
-        <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <span>5</span>
-            <span>Jan 19,2024</span>
+        <div class="profile">
+            <div class="name">
+                <img src="../../../assets/prof Pic.jpg" alt="" width="80" style="clip-path: circle(50%);">    
+                <span>Billy S.</span>
+            </div>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span>Jan 19,2024</span>
+            </div>
         </div>
-        <p>Had a clogged shower drain. Called Eric and he was able to fit me in the following afternoon. He even called to let me know he was on his way, which I really appreciated so I could inform my wife (since I was at work). They came out, diagnosed the problem quickly, and he felt confident he could take care of it with his snake or vacuum. But said that if that didn't work, he could recommend a guy with blower. I really appreciated that he was ready to connect us with someone else if he wasn't able to fix it. But that wasn't necessary as they were able to clear the clog pretty quickly and at a very reasonable price. I love the fact that they're a small, local business and we'll definitely be using Eric and his team again for any future plumbing issues.</p>
-        <textarea name="enquire" id="" cols="30" rows="10" placeholder="Make an Enquiry"></textarea>    
-        <button>Send</button>
+
+        <div class="rev">
+            <p>Had a clogged shower drain. Called Eric and he was able to fit me in the following afternoon. He even called to let me know he was on his way, which I really appreciated so I could inform my wife (since I was at work). They came out, diagnosed the problem quickly, and he felt confident he could take care of it with his snake or vacuum. But said that if that didn't work, he could recommend a guy with blower. I really appreciated that he was ready to connect us with someone else if he wasn't able to fix it. But that wasn't necessary as they were able to clear the clog pretty quickly and at a very reasonable price. I love the fact that they're a small, local business and we'll definitely be using Eric and his team again for any future plumbing issues.</p>
+        </div>
+
+            <textarea name="enquire" id="" cols="30" rows="10" placeholder="Add a Review"></textarea>    
+            <button id = "send">Add Review</button>
     </div>
 </div>
 <app-footer></app-footer>

@@ -15,6 +15,7 @@ app-nav-bar{
     top: 0;
     left: 0;
     width: 98vw;
+    --categoriesWidth:94vw;
 }
 
 
@@ -182,9 +183,10 @@ a i{
 
 .desc{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding-left: 10px;
     padding-top: 10px;
+    padding-bottom: 30px;
     /* align-items: center; */
     flex-direction: column;
     gap: 10px;
@@ -197,6 +199,20 @@ a i{
     transition-delay: .3s;
     transition: all .3s ease;
     /* border: 1px solid blue; */
+
+}
+
+.desc button{
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.253);
+    border: none;
+    color:#00CC83;
+    font-size: 18px;
+}
+
+#landscaping button{
+    background-color: rgba(255, 255, 255, 0.336);
+    color:#23f1a9;
 
 }
 

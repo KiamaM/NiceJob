@@ -162,16 +162,168 @@ i{
   font-size: 16px;
 }
 
-/* .categories div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-} */
 
 .fiterBy div:hover{
   color:var(--categoriesHover, white);
 }
+
+
+
+/* Modal Styling */
+
+.drawer {
+  position: fixed;
+  top: 15%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: min(90vw, 43vw);
+  height: 72vh;
+  border: none;
+  padding: 20px;
+  /* background: #fff; */
+  overflow: auto;
+  border-radius: 0.375rem;
+  background-color:transparent;  
+}
+
+.drawer.opened {
+  animation: slide-in 0.75s forwards;
+}
+
+.drawer:not(.opened) {
+  animation: slide-out 0.75s forwards;
+}
+
+/* Styles the backdrop of the dialog */
+dialog::backdrop {
+  background: var(--neutral-black, #000);
+  opacity: 0.2;
+}
+
+/* Slide in animation */
+@keyframes slide-in {
+  0% {
+    transform: translate(-50%, -150%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -150%);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .drawer.opened,
+  .drawer:not(.opened) {
+    animation: none;
+  }
+}
+
+/* Register Modal*/
+
+.registerDrawer {
+  position: fixed;
+  top: 12%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 90vh;
+  border: none;
+  padding: 20px;
+  /* background: #fff; */
+  overflow: auto;
+  border-radius: 20px;
+  background-color:transparent;  
+}
+
+.registerDrawer.opened {
+  animation: slide-in 0.75s forwards;
+}
+
+.registerDrawer:not(.opened) {
+  animation: slide-out 0.75s forwards;
+}
+
+/* Styles the backdrop of the dialog */
+dialog::backdrop {
+  background: var(--neutral-black, #000);
+  opacity: 0.2;
+}
+
+/* Slide in animation */
+@keyframes slide-in {
+  0% {
+    transform: translate(-50%, -150%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -150%);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .registerDrawer.opened,
+  .registerDrawer:not(.opened) {
+    animation: none;
+  }
+}
+
+
+
+
+
+/* Styles the backdrop of the dialog */
+dialog::backdrop {
+  background: var(--neutral-black, #000);
+  opacity: 0.2;
+}
+
+/* Slide in animation */
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .registerDrawer.opened,
+  .registerDrawer:not(.opened) {
+    animation: none;
+  }
+} 
+
+
+
+
+
+/* Responsiveness */
 
 
 @media only screen and (max-width: 430px){
@@ -206,3 +358,5 @@ display: none;}
 
 
 }
+
+

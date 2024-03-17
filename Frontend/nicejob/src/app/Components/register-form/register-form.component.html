@@ -44,10 +44,16 @@
             <div class="form-group" id="reg-btn-section">
                     <button data-cy="create-account-link" type="submit" [disabled]="registerForm.invalid" class="form-submit">Create Account </button>
                 <div class="form-link">
-                    <p routerLink="/login">Proceed to login?</p>
+                    <!-- <p (click)="openLoginModal()">Proceed to login?</p> -->
                 </div>
             </div>
         </form>
     </div>
 
 </div>
+
+<dialog type="modal" id="dialog" class="drawer" #dialog>
+    <app-login></app-login>
+</dialog>
+
+

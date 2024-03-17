@@ -2,14 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    width: 40vw;
+    height: 60vh;
+    margin: 0;    
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
     /* background-color:black; */
 }
 
 .loginImg{
-    height: 75%;
-    width: 30%;
+    height: 100%;
+    width: 50%;
     background-image: url(../../../assets/Login\ Page\ Img.jpg);
     background-size:cover;
     background-position:center;
@@ -26,10 +28,11 @@
     border-radius: 20px;
 }
 
+
 .logins{
-    width: 30%;
-    height: 75%;  
-    background-color: #d9d9d941;  
+    width: 50%;
+    height: 100%;  
+    background-color: #d9d9d9;  
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -45,12 +48,14 @@ form{
 
 input{
     margin: 10px 0;
-    height: 40px;
+    height: 30px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.356);
     border-radius: 10px;
     width: 90%;
     padding: 10px;
+    background-color: transparent;
+    color: white;
     /* border: 1px solid rgba(0, 0, 0, 0.397); */
     /* background-color: #d9d9d917;   */
 

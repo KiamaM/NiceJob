@@ -14,7 +14,7 @@
                             <p id="aboutUsText">With a team of experts dedicated to your success, we're committed to <br> delivering unparalleled results that propel your business forward. <br> Experience the difference  with StriveCraft <br> – where every interaction is a step towards success."</p>
                             <p id="aboutUsTextMobile">With a team of experts dedicated to your success. – where every interaction is a step towards success."</p>
 
-                            <button routerLink="register">HIRE TOP TALENT</button>
+                            <button (click)="openRegisterModal()">HIRE TOP TALENT</button>
                 </div>                
         </div>
 
@@ -30,8 +30,11 @@
             <label for="c1" class="card">
                 <div class="row">
                     <div class="desc" id="events">
-                        <i class="fa-solid fa-calendar"></i>
-                        <p>Weddings and Events</p> 
+                        <div class="serviceName">
+                            <i class="fa-solid fa-calendar"></i>
+                            <p>Weddings and Events</p> 
+                        </div>
+                        <button>Learn More...</button>
                     </div>             
                 </div>
             </label>
@@ -39,8 +42,11 @@
             <label for="c2" class="card">
                 <div class="row">
                     <div class="desc" id="photography">
-                        <i class="fa-solid fa-camera-retro"></i>
-                        <p>Professional Photography</p>  
+                        <div class="serviceName">
+                            <i class="fa-solid fa-camera-retro"></i>
+                            <p>Professional Photography</p>  
+                        </div>
+                        <button>Learn More...</button>
 
                     </div>
                 </div>
@@ -49,26 +55,35 @@
             <label for="c3" class="card">
                 <div class="row">
                     <div class="desc" id="catering">
-                        <i class="fa-solid fa-wine-glass-empty"></i>
-                        <p>Catering  Services</p>
+                        <div class="serviceName">
+                            <i class="fa-solid fa-wine-glass-empty"></i>
+                            <p>Catering  Services</p>
+                        </div>
+                        <button>Learn More...</button>
                     </div>
                 </div>
             </label>
             <input type="radio" name="card" id="c4" checked>
             <label for="c4" class="card">
                 <div class="row">
-                    <div class="desc" id="design">                        
-                    <i class="fa-regular fa-object-group"></i>
-                    <p>Graphics  Design</p>
-                    </div>
+                    <div class="desc" id="design">  
+                        <div class="serviceName">
+                            <i class="fa-regular fa-object-group"></i>
+                            <p>Graphics  Design</p>
+                        </div>      
+                        <button>Learn More...</button>
+                   </div>
                 </div>
             </label>
             <input type="radio" name="card" id="c5" checked>
             <label for="c5" class="card">
                 <div class="row">
                     <div class="desc" id="cleaning">
-                        <i class="fa-solid fa-broom"></i>
-                        <p>Professional  Cleaning</p>
+                        <div class="serviceName">
+                            <i class="fa-solid fa-broom"></i>
+                            <p>Professional  Cleaning</p>
+                        </div>
+                        <button>Learn More...</button>
                     </div>
                 </div>
             </label>
@@ -76,8 +91,11 @@
             <label for="c6" class="card">
                 <div class="row">
                     <div class="desc" id="landscaping">
-                        <i class="fa-solid fa-scissors"></i>
-                        <p>Landscaping</p>               
+                        <div class="serviceName">
+                            <i class="fa-solid fa-scissors"></i>
+                            <p>Landscaping</p>   
+                        </div>          
+                        <button>Learn More...</button>  
                     </div>
                 </div>
             </label>
@@ -86,9 +104,13 @@
     <div class="getStarted">
         <h3>Ready To Get Started? </h3>
         <p>Hire faster with the country’s  highest rated <br> professionals</p>
-        <button routerLink="register">Join StriveCraft</button>
+        <button (click)="openRegisterModal()">Join StriveCraft</button>
     </div>
 
 </div>
 <app-footer></app-footer>
+
+<dialog type="modal" id="regDialog" class="registerDrawer" #regDialog>
+    <app-register-form></app-register-form>
+</dialog>
 

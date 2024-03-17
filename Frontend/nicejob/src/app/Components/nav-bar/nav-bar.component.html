@@ -4,7 +4,7 @@
 
             <i id="hamburger" class="fa-solid fa-bars"></i>
 
-            <img src="../../../assets/strive-craft-high-resolution-logo-transparent (2).png" alt="" width="70px" id="logoImg" style="cursor: pointer;">
+            <img src="../../../assets/strive-craft-high-resolution-logo-transparent (2).png" alt="" width="70px" id="logoImg" style="cursor: pointer;" routerLink="/">
             <div class="search">
                 <input type="text" name="search" id="searchField" placeholder="Search">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -13,10 +13,11 @@
             </div>
         </div>
         <div class="links">
-            <span routerLink="/register-specialist">Apply as a specialist</span>
-            <span routerLink="/register">Hire top talent</span>
-            <span id="login" routerLink="/login">Login</span>
-            <button routerLink="register" id="signUp">Sign Up</button>
+            <span routerLink="/register-specialist" (click)="openRegisterModal()">Apply as a specialist</span>
+            <!-- <span routerLink="/register">Hire top talent</span> -->
+            <!-- <span id="login" routerLink="/login">Login</span> -->
+            <span id="login" (click)="openModal()">Login</span>
+            <button (click)="openRegisterModal()" id="signUp">Sign Up</button>
         </div>
     </div>
 </div>
@@ -30,4 +31,14 @@
         <div >Graphic Design <i class="fa-solid fa-angle-down"></i></div>
     </div>
 </div>
+
+<dialog type="modal" id="dialog" class="drawer" #dialog>
+        <app-login></app-login>
+</dialog>
+
+
+<dialog type="modal" id="regDialog" class="registerDrawer" #regDialog>
+    <app-register-form></app-register-form>
+</dialog>
+
 <router-outlet></router-outlet>

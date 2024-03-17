@@ -26,7 +26,6 @@ app-nav-bar{
 }
 
 .listingProfileContainer h2{
-    /* text-align: center; */
     color: #084B33;
 }
 
@@ -38,9 +37,9 @@ app-nav-bar{
     display: flex;
     gap: 10px;
     align-items: center;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 300;
-    width: 80%;
+    width: 100%;
 }
 
 #available{
@@ -48,6 +47,133 @@ app-nav-bar{
     font-size: 18px;
 }
 
-.image img{
+.image{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
 }
+
+.image img{
+    width: 20%;
+    max-height: 30vh;
+    min-height: 30vh;
+    border-radius: 10px;
+}
+
+.rateAvailable{
+    width: 100%;
+    display: flex;    
+}
+
+.service{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;  
+    margin-bottom: 100px;  
+}
+
+.buttons button{
+    height: 40px;
+    width: 15%;
+    border: none;
+    cursor: pointer;
+    color: #084B33;
+    border-radius: 10px;
+    align-content: center;
+    /* text-align: left; */
+    background-color: transparent;
+}
+
+/* .buttons button:hover{
+    background-color: rgba(0, 0, 0, 0.13);
+} */
+
+.about{
+    width: 60%;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+i{
+    color: #00CC83;
+}
+
+.stars span{
+    margin: 10px;
+}
+
+
+.rev{
+    width: 80%;
+}
+
+textarea{
+    width: 80%;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.13);
+    padding: 10px;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+#send{
+    width: 30%;
+    height: 40px;
+    border: none;
+    margin: 20px 0px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+#send:hover{
+    background-color: rgba(128, 128, 128, 0.288);
+}
+
+
+
+@media only  screen and (max-width:470px){
+    .service{
+        flex-wrap: wrap;
+    }
+
+    .buttons button{
+        width: 80vw;
+        margin: 10px 0px;
+    }
+
+    .buttons{
+        flex-wrap: wrap;
+    }
+
+    .image{
+        flex-wrap: wrap;
+    }
+
+    .image img{
+        width: 80vw;
+        margin: 20px 0px;
+    }
+
+
+}
+

@@ -1,0 +1,31 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="main">
+    <div class="adminSidebar">
+        <div class="sidebarNav">
+            <button><i class="fa-solid fa-house"></i>Dashboard</button>
+            <button><i class="fa-solid fa-user-group"></i>Specialists</button>
+            <button><i class="fa-regular fa-star"></i>Reviews</button>
+            <button><i class="fa-solid fa-list-check"></i>Listings</button>
+            <button><i class="fa-solid fa-exclamation"></i>Complaints</button>
+            <button><i class="fa-solid fa-message"></i>Messages</button>
+            <button><i class="fa-solid fa-file-invoice-dollar"></i>Payments</button>
+        </div>
+    </div>
+    <div class="adminDisplay">
+        <div class="adminTop">              
+            <h2>Dashboard</h2>
+            <div class="addProjectBtn">
+               <button id="newProject" routerLink="/add-listing">New Listing</button> 
+            </div>
+        </div>
+        <div class="adminContent">
+            <p id = 'noProjects'>Nothing to show at the moment. Activity will be displayed here</p>
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>
+
+
+

@@ -2,7 +2,7 @@ footer {
     background-color: #f5f5f5; 
     padding: 20px;
     border-top: 1px solid black;
-    margin-top: 20px;
+    margin-top: var(--footerTopMargin, 20px);
     width: var(--footerWidth, 98.5vw);
     box-sizing: border-box;
   }
