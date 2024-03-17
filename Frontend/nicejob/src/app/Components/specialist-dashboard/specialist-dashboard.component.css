@@ -1,0 +1,216 @@
+app-nav-bar{
+    color: #edf0f1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* width: 98vw; */
+    /* --categoriesWidth:94vw; */
+    --categoriesHover:black;
+    --categoiesBgColor:rgba(0, 0, 0, 0.062);
+    margin-top: 0;
+    
+}
+
+.main{
+    display: flex;
+    width: 98vw;
+    margin-top: 9vh;
+  }
+  .adminSidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 15%;
+    /* padding-left: 20px; */
+    padding-top: 40px;
+    background-color: #eaedf1;
+  }
+  
+  .adminDisplay hr{
+    border: 1px solid rgb(185, 18, 18);
+    width: 86%;
+    height: 0px;
+  }
+  
+  .adminDisplay{
+    width: 85%;
+    height: 100%;
+    /* border: 1px solid blue; */
+  }
+  
+  .adminContent{
+    padding-left: 20px;
+    margin-top: 20px;
+    height: 120vh;
+  }
+
+  
+  .sidebarNav{
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    /* gap: 30px; */
+  }  
+
+  
+  .sidebarNav button{
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding-left: 10px;
+    gap: 10px;
+    /* color: #38ACEC; */
+  }
+  
+  .sidebarNav > button:hover{
+    background-color: #084B33;
+    border: 1px solid rgba(145, 141, 141, 0.4);  
+    margin-right: 20px;
+    padding-left: 0;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .adminTop{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-top: 80px;
+    padding-bottom: 30px;
+  }
+  
+  .adminTop h2{
+    font-size: 30px;
+  }
+  
+  .addProjectBtn{
+    /* border: 1px solid blue; */
+    width: 12%;
+  }  
+  
+  
+  
+
+  #newProject{
+    background-color: #2ea44f;
+    color: white;
+    border: none;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+  }
+  
+  #newProject:hover{
+    background-color: #eaedf1;
+  }
+  
+  .projectDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    border: 1px solid rgba(145, 141, 141, 0.4);
+    border-radius: 20px;
+    width: 20%;
+    height: 20%;
+    padding: 20px;
+    min-height: 150px;
+  }
+  
+  /* .projectDiv:hover{
+    background-color: #74bfe7;
+  } */
+  
+  .newTitle{
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .viewBtn{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #74bfe7;
+    border: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .viewBtn:hover{
+    background-color:#eaedf1;
+  
+  }
+  
+  .deleteBtn{
+    background-color: #eaedf1;
+    width: 20%;
+    border: none;
+    /* border-radius: 5px; */
+  }
+  
+  .deleteBtn:hover{
+    background-color: #74bfe7;
+  }
+  
+  .crudDiv{
+    width: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content:flex-end;
+  }
+  
+  .backToProjects{
+    width: 20%;
+    border: none;
+    border-radius: 3px;
+  }
+  
+  .backToProjects:hover{
+    background-color: #74bfe7;
+  }
+
+  app-footer{
+    --footerTopMargin:0px;    
+  }
+  
+  @media only screen and (max-width:428px) {
+    .adminSidebar{
+      display: none;
+    }
+    
+  #newProject{
+    width: 70%;
+  }
+  
+  .adminTop{
+    width: 80vw;
+    gap: 40px;
+  
+  }
+  
+  .addProjectBtn{
+    width: 60vw;
+  }
+  
+  .adminDisplay hr{
+    width: 97vw;
+  }
+    
+    
+    
+    
+    
+    
+    }
+  

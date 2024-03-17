@@ -1,0 +1,139 @@
+.auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 60vh;
+    margin: 0;    
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    /* background-color:black; */
+}
+
+.loginImg{
+    height: 100%;
+    width: 50%;
+    background-image: url(../../../assets/Login\ Page\ Img.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.img{
+    height: 100%;
+    width: 100%;
+    /* background-color:rgba(0, 0, 0, 0.452); */
+    background-color:rgba(255, 255, 255, 0.192);
+    border-radius: 20px;
+}
+
+
+.logins{
+    width: 50%;
+    height: 100%;  
+    background-color: #d9d9d9;  
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+
+form{
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid blue; */
+    padding-left: 10px;
+}
+
+input{
+    margin: 10px 0;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.356);
+    border-radius: 10px;
+    width: 90%;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    /* border: 1px solid rgba(0, 0, 0, 0.397); */
+    /* background-color: #d9d9d917;   */
+
+}
+
+input:focus{
+    outline: none;
+    /* font-size: 20px; */
+}
+
+#signIn{
+    margin: 60px 0;
+    font-weight: 400;
+}
+
+form p{
+    font-size: 24px;
+    font-weight: 200;
+}
+.terms{
+    font-size: 14px;
+    font-weight: 300;
+    margin: 20px 0;
+    width: 90%;
+    /* text-align: center; */
+}
+
+.terms p{
+    font-size: 14px;
+    font-weight: 300;
+    margin: 20px 0;
+    /* text-align: center; */
+}
+
+a{
+    text-decoration:none;
+    color: black;
+    font-weight: 300;
+}
+
+form label{
+    font-size: 18px;
+    font-weight: 400;
+
+}
+
+.nav{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+input[type = "submit"]{
+    height: 40px;
+    border: none;
+    margin-bottom: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+input[type = "submit"]:hover{
+cursor: pointer;
+}
+
+input[type = "submit"]:focus{
+    font-size: 14px;
+}
+
+
+@media only screen and (max-width: 430px){
+    .loginImg{
+        display: none;
+    }
+
+    .logins{
+        width: 90vw;
+    }
+}
+

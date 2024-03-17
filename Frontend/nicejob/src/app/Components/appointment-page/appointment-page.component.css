@@ -1,0 +1,50 @@
+.appointmentContainer{
+    width: 97vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: hsl(159, 81%, 16%);
+    box-sizing: border-box;
+    /* background-color: red; */
+
+}
+
+.appointmentContainer h3{
+    margin-top: 40px;
+}
+
+.appointmentContainer h4{
+    margin: 20px 0px;
+}
+
+app-scheduler{
+    width: 70vw;
+    margin: 40px 0px;
+    background-color: red;
+}
+
+textarea{
+    width: 80%;
+    padding: 10px;
+    border: none;   
+    background-color: rgba(128, 128, 128, 0.137); 
+}
+
+textarea:focus{
+    outline: none;
+}
+
+button{
+    width: 20%;
+    height: 40px;
+    border: none;
+    margin: 40px 0px;
+    background-color: #00CC83;
+    color: white;
+}
+
+button:hover{
+    background-color: #00cc85af;
+}
+
