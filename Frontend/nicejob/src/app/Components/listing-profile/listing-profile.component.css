@@ -4,6 +4,10 @@ app-nav-bar{
     --categoiesBgColor:rgba(0, 0, 0, 0.062);
 }
 
+.top{
+    display: flex;
+    gap:300px;
+}
 
 .listingProfileContainer{
     display: flex;

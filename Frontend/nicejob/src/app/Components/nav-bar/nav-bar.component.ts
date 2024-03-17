@@ -3,11 +3,12 @@ import { Component, ElementRef, ViewChild} from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { RegisterFormComponent } from '../register-form/register-form.component';
+import { BackNavigationComponent } from '../back-navigation/back-navigation.component';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [RouterLinkActive, RouterOutlet, RouterLinkActive, CommonModule, RouterLink, LoginComponent, RegisterFormComponent],
+  imports: [RouterLinkActive, RouterOutlet, RouterLinkActive, CommonModule, RouterLink, LoginComponent, RegisterFormComponent, BackNavigationComponent],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })

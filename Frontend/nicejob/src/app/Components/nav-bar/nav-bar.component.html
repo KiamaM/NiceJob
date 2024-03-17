@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="links">
-            <span routerLink="/register-specialist" (click)="openRegisterModal()">Apply as a specialist</span>
+            <span  (click)="openRegisterModal()">Apply as a specialist</span>
             <!-- <span routerLink="/register">Hire top talent</span> -->
             <!-- <span id="login" routerLink="/login">Login</span> -->
             <span id="login" (click)="openModal()">Login</span>
@@ -23,6 +23,7 @@
 </div>
 <div class="categories">
     <div class="fiterBy">
+        <app-back-navigation></app-back-navigation>
         <div >Professional Photography<i class="fa-solid fa-angle-down"></i></div>
         <div >Catering <i class="fa-solid fa-angle-down"></i></div>
         <div >Professional Cleaning <i class="fa-solid fa-angle-down"></i></div>

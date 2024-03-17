@@ -5,11 +5,12 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RegisterFormComponent } from '../register-form/register-form.component';
 import { ModalService } from '../../Services/modal.service';
+import { BackNavigationComponent } from '../back-navigation/back-navigation.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [NavBarComponent, FooterComponent, RouterLink, RouterOutlet, RouterLinkActive, CommonModule , RegisterFormComponent],
+  imports: [NavBarComponent, FooterComponent, RouterLink, RouterOutlet, RouterLinkActive, CommonModule , RegisterFormComponent, BackNavigationComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
