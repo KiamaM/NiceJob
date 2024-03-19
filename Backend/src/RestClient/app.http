@@ -2,11 +2,11 @@ POST  http://localhost:4500/users/register
 Content-Type: application/json
 
 {
-    "firstName":"May",
-    "lastName":"Dean",
+    "firstName":"Sharon",
+    "lastName":"Cherotich",
     "role":"Specialist",
-    "email":"mailing@mailed.com",
-    "password":"Passed"  
+    "email":"sharoncherotich112@gmail.com",
+    "password":"test12&34"  
 }
 
 ###

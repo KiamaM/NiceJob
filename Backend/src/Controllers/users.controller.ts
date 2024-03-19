@@ -3,6 +3,7 @@ import { createdUser } from "../Interfaces/users.interface";
 import {v4} from 'uuid'
 import bcrypt from 'bcrypt'
 import Connection from "../dbHelpers/dbHelper";
+import { registerUserValidation } from "../Validators/user.validator";
 
 const dbhelper = new Connection
 
@@ -12,8 +13,14 @@ export const registerUser = async(req:Request, res:Response)=>{
         console.log(id);
 
         const{firstName, lastName, role, email, password}:createdUser = req.body
-        
 
+        let{error} = registerUserValidation.validate(req.body)     
+        
+        if(error){
+            return res.json({
+                error:error.details[0].message
+            })
+        }
 
         const hashedPwd = await bcrypt.hash(password, 5)
         console.log(hashedPwd);
@@ -42,3 +49,5 @@ export const registerUser = async(req:Request, res:Response)=>{
         })
     }
 }
+
+

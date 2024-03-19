@@ -16,12 +16,19 @@ exports.registerUser = void 0;
 const uuid_1 = require("uuid");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const dbHelper_1 = __importDefault(require("../dbHelpers/dbHelper"));
+const user_validator_1 = require("../Validators/user.validator");
 const dbhelper = new dbHelper_1.default;
 const registerUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = (0, uuid_1.v4)();
         console.log(id);
         const { firstName, lastName, role, email, password } = req.body;
+        let { error } = user_validator_1.registerUserValidation.validate(req.body);
+        if (error) {
+            return res.json({
+                error: error.details[0].message
+            });
+        }
         const hashedPwd = yield bcrypt_1.default.hash(password, 5);
         console.log(hashedPwd);
         let result = yield dbhelper.execute('registerUser', {

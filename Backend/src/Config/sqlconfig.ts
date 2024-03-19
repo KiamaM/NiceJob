@@ -6,10 +6,10 @@ dotenv.config()
 console.log(process.env?.['DB_NAME']);
 
 export const sqlConfig = {
-  user: (process.env?.['DB_USER'] as string) || 'sa',
-  password: (process.env?.['DB_PWD'] as string) || 'Haha' ,
-  database: (process.env?.['DB_NAME'] as string) || 'StriveCraft',
-  server: (process.env?.['SERVER'] as string) || 'DESKTOP-A58QF1P\\KIAMA',
+  user: (process.env['DB_USER'] as string),
+  password: (process.env['DB_PWD'] as string),
+  database: (process.env['DB_NAME'] as string),
+  server: (process.env['SERVER'] as string),
   pool: {
     max: 10,
     min: 0,

@@ -17,18 +17,27 @@ const mssql_1 = __importDefault(require("mssql"));
 const sqlConfig_1 = require("../Config/sqlConfig");
 const ejs_1 = __importDefault(require("ejs"));
 const email_helper_1 = require("../Helpers/email.helper");
+const path_1 = __importDefault(require("path"));
 const welcomeUser = () => __awaiter(void 0, void 0, void 0, function* () {
     const pool = mssql_1.default.connect(sqlConfig_1.sqlConfig);
     const users = (yield ((yield pool).request().query('SELECT *FROM users WHERE isDeleted=0 AND isWelcomed=0'))).recordset;
     console.log(users);
     for (let user of users) {
-        ejs_1.default.renderFile('../Templates/welcomeUser.ejs', { customerName: user.firstName }, (error, data) => __awaiter(void 0, void 0, void 0, function* () {
+        const templatePath = path_1.default.resolve(__dirname, '../Templates/welcomeUser.ejs'); // Resolve the template file path
+        console.log('Template Path:', templatePath);
+        ejs_1.default.renderFile('Templates/welcomeUser.ejs', { customerName: user.firstName }, (error, data) => __awaiter(void 0, void 0, void 0, function* () {
+            if (error) {
+                console.error('Error rendering EJS template:', error);
+                return;
+            }
+            console.log('Rendered Template Data:', data); // Log the rendered template data
             let mailOptions = {
                 from: "muriithikiamad1@gmail.com",
                 to: user.email,
                 subject: "Welcome to StriveCraft",
                 html: data
             };
+            console.log(data);
             try {
                 yield (0, email_helper_1.sendMail)(mailOptions);
                 (yield pool).request().query('UPDATE users SET isWelcomed=1 WHERE isWelcomed=0 AND isDeleted=0');
@@ -37,6 +46,7 @@ const welcomeUser = () => __awaiter(void 0, void 0, void 0, function* () {
             catch (error) {
                 console.error(error);
             }
+            console.log(data);
         }));
     }
 });

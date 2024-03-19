@@ -1,6 +1,7 @@
 import express,  { NextFunction, Request, Response, json, } from 'express'
 import cors from 'cors'
 import userRouter from './Router/user.router'
+import auth_router from './Router/auth.router'
 
 const app = express()
 
@@ -9,6 +10,7 @@ app.use(json())
 
 
 app.use('/users', userRouter)
+app.use('/auth', auth_router)
 
 
 

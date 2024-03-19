@@ -13,4 +13,12 @@ import { BackNavigationComponent } from '../back-navigation/back-navigation.comp
 })
 export class ListingProfileComponent {
 
+  scrollToReview(){
+    // Scroll the window smoothly to coordinates (0, 500)
+    window.scrollTo({
+      top: 900,
+      behavior: 'smooth'
+    });
+
+  }
 }

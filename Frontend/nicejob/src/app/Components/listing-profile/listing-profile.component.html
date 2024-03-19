@@ -12,11 +12,6 @@
             <img src="../../../assets/Photography img.jpg" alt="">            
         </div>
         <div class="rateAvailable">
-            <!-- <div class="rating">            
-                <i class="fa-solid fa-star"></i>
-                <span>5.0(1.7K Reviews)</span>
-            </div>
-            <p id="available">Available</p> -->
         </div>
         <div class="service">
             <p>25 Years in business</p>
@@ -26,7 +21,7 @@
         <div class="buttons">
             <button routerLink="/appointment-page"><i class="fa-regular fa-calendar-check"></i>  Make a Reservation</button>
             <button><i class="fa-solid fa-message"></i> Chat</button>
-            <button><i class="fa-regular fa-star-half-stroke"></i> Write a Review</button>
+            <button (click)="scrollToReview()"><i class="fa-regular fa-star-half-stroke"></i> Write a Review</button>
         </div>
         <div class="about">
             <h3>About Us</h3>

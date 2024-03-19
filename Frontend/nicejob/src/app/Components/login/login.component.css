@@ -1,9 +1,33 @@
-.auth{
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40vw;
-    height: 60vh;
+    width: 100vw;
+    height: 100vh;
+    background-color: #e9e2e249;
+
+}
+
+app-nav-bar{
+    color: #edf0f1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 99vw;
+    --categoriesWidth:99vw;
+    --backNavColor: transparent;
+    --categoriesHover:black;
+    --categoiesBgColor:rgba(0, 0, 0, 0.062);
+}
+
+
+.auth{
+    margin-top: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 60%;
     margin: 0;    
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
     /* background-color:black; */

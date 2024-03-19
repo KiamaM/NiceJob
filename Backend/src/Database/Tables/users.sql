@@ -10,3 +10,5 @@ CREATE TABLE users(
     )
 
     SELECT * FROM users
+
+    DELETE FROM users;

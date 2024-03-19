@@ -1,38 +1,43 @@
-<div class="auth">
-    <div class="loginImg">
-        <div class="img">
-
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="auth">
+        <div class="loginImg">
+            <div class="img">
+    
+            </div>
+        </div>
+        <div class="logins">
+            <div *ngIf="visible2" class="successDiv"  style="color: green; text-align: center; width: 100%;">{{successMsg}}</div> 
+            <div *ngIf="visible" class="errorDiv" style="color: red; text-align: center;">{{errorMsg}}</div>   
+            <form #LoginForm = 'ngForm' (ngSubmit)="login(LoginForm.value)" class="loginForm">
+                <p id="signIn">Sign in to Your Account</p>
+                <div class="loginInputs">            
+                    <div class="emailField">
+                        <label for="loginEmail">Email:*</label>
+                        <br>
+                        <input type="email" name="email" id="loginEmail" ngModel placeholder="johndoe@example.com"> 
+                    </div>
+                    <div class="passwordField">
+                        <label for="loginPassword">Password:*</label>
+                        <br>
+                        <input type="password" name="password" id="loginPassword" ngModel placeholder="*************">
+                        <br>
+                    </div>
+                </div>
+                <div class="loginBtn">
+                    <input type="submit" value="LOG IN"> <br>
+                    <div class="nav">
+                        <a routerLink="/reset-password">Forgot Password?</a><br>
+                    </div>
+                </div>
+                <div class="terms">
+                </div>
+            </form>    
         </div>
     </div>
-    <div class="logins">
-        <div *ngIf="visible2" class="successDiv"  style="color: green; text-align: center; width: 100%;">{{successMsg}}</div> 
-        <div *ngIf="visible" class="errorDiv" style="color: red; text-align: center;">{{errorMsg}}</div>   
-        <form #LoginForm = 'ngForm' (ngSubmit)="login(LoginForm.value)" class="loginForm">
-            <p id="signIn">Sign in to Your Account</p>
-            <div class="loginInputs">            
-                <div class="emailField">
-                    <label for="loginEmail">Email:*</label>
-                    <br>
-                    <input type="email" name="email" id="loginEmail" ngModel placeholder="johndoe@example.com"> 
-                </div>
-                <div class="passwordField">
-                    <label for="loginPassword">Password:*</label>
-                    <br>
-                    <input type="password" name="password" id="loginPassword" ngModel placeholder="*************">
-                    <br>
-                </div>
-            </div>
-            <div class="loginBtn">
-                <input type="submit" value="LOG IN"> <br>
-                <div class="nav">
-                    <a routerLink="/reset-password">Forgot Password?</a><br>
-                </div>
-            </div>
-            <div class="terms">
-            </div>
-        </form>    
-    </div>
+
 </div>
+
 <!-- <p style="text-align: center; font-size: 12px;">This site is protected by its Privacy Policy and Terms of Service apply</p> -->
 
 <router-outlet></router-outlet>

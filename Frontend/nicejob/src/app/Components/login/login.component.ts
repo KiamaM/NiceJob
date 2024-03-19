@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, RouterOutlet, RouterLinkActive],
+  imports: [CommonModule, FormsModule, RouterLink, RouterOutlet, RouterLinkActive, NavBarComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
