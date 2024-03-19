@@ -16,6 +16,7 @@ app-nav-bar{
     left: 0;
     width: 98vw;
     --categoriesWidth:94vw;
+    --backNavColor: transparent;
 }
 
 

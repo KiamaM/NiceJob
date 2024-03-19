@@ -1,6 +1,7 @@
 <div class="landingContainer">
     <div class="hero">
         <app-nav-bar></app-nav-bar>
+
         <div class="aboutUs">
 
                 <div class="aboutUsDesc">
@@ -23,7 +24,7 @@
     <div id="specialistTitle">
         <p>Specialist Services</p>
     </div>
-    <a routerLink="listings">View All <i class="fa-solid fa-arrow-up-right-from-square"></i></a>   
+    <a routerLink="/listings">View All <i class="fa-solid fa-arrow-up-right-from-square"></i></a>   
     <div class="services"> 
         <div class="serviceCards">
             <input type="radio" name="card" id="c1" checked>
@@ -104,13 +105,20 @@
     <div class="getStarted">
         <h3>Ready To Get Started? </h3>
         <p>Hire faster with the country’s  highest rated <br> professionals</p>
-        <button (click)="openRegisterModal()">Join StriveCraft</button>
+        <button >Join StriveCraft</button>
     </div>
 
 </div>
 <app-footer></app-footer>
 
-<dialog type="modal" id="regDialog" class="registerDrawer" #regDialog>
+<!-- <dialog type="modal" id="regDialog" class="registerDrawer" #regDialog>
     <app-register-form></app-register-form>
+</dialog> -->
+<dialog class="roleModal" type ="modal" #rolePrompt>
+    <h2>Choose Your Role</h2>
+    <div class="roleButtons">
+        <button (click)="defineSpecialist()" id="specialistBtn">Specialist</button>
+        <button (click)="defineClient()" id="clientBtn">Client</button>
+    </div>
 </dialog>
 

@@ -1,5 +1,5 @@
 <div class="navContainer">
-    <div class="nav">
+    <div class="nav">        
         <div class="logonSearch">
 
             <i id="hamburger" class="fa-solid fa-bars"></i>
@@ -13,16 +13,17 @@
             </div>
         </div>
         <div class="links">
-            <span routerLink="/register-specialist" (click)="openRegisterModal()">Apply as a specialist</span>
+            <span  (click)=" defineSpecialist()">Apply as a specialist</span>
             <!-- <span routerLink="/register">Hire top talent</span> -->
             <!-- <span id="login" routerLink="/login">Login</span> -->
-            <span id="login" (click)="openModal()">Login</span>
-            <button (click)="openRegisterModal()" id="signUp">Sign Up</button>
+            <span id="login" routerLink="/login">Login</span>
+            <button (click)="  openrolePrompt() " id="signUp">Sign Up</button>
         </div>
     </div>
 </div>
 <div class="categories">
     <div class="fiterBy">
+        <app-back-navigation></app-back-navigation>
         <div >Professional Photography<i class="fa-solid fa-angle-down"></i></div>
         <div >Catering <i class="fa-solid fa-angle-down"></i></div>
         <div >Professional Cleaning <i class="fa-solid fa-angle-down"></i></div>
@@ -32,13 +33,21 @@
     </div>
 </div>
 
-<dialog type="modal" id="dialog" class="drawer" #dialog>
+<!-- <dialog type="modal" id="dialog" class="drawer" #dialog>
         <app-login></app-login>
 </dialog>
 
 
 <dialog type="modal" id="regDialog" class="registerDrawer" #regDialog>
     <app-register-form></app-register-form>
+</dialog> -->
+
+<dialog class="roleModal" type ="modal" #rolePrompt>
+    <h2>Choose Your Role</h2>
+    <div class="roleButtons">
+        <button (click)="defineSpecialist()" id="specialistBtn">Specialist</button>
+        <button (click)="defineClient()" id="clientBtn">Client</button>
+    </div>
 </dialog>
 
 <router-outlet></router-outlet>
