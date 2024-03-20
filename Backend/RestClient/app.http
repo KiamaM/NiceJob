@@ -1,0 +1,46 @@
+POST  http://localhost:4500/users/register
+Content-Type: application/json
+
+{
+    "firstName":"Dean",
+    "lastName":"Cook",
+    "role":"client",
+    "email":"mailit@mail.com",
+    "password":"test12&34"  
+}
+
+###
+
+GET http://localhost:4500/users/all-clients
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlOWQ0MjZjNS0wNjk4LTQ3ZWItYjdiOC1iYWQzMGVmOGIwNDkiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwiaWF0IjoxNzEwODg5NzEyLCJleHAiOjE3MTA4OTMzMTJ9.QkyqQoWwXkYxp_z2Zhl3zLFpkIzK_yLa4VC96drNUak
+
+
+###
+
+
+GET http://localhost:4500/users/client/e9d426c5-0698-47eb-b7b8-bad30ef8b049
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlOWQ0MjZjNS0wNjk4LTQ3ZWItYjdiOC1iYWQzMGVmOGIwNDkiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwiaWF0IjoxNzEwODg1MDQwLCJleHAiOjE3MTA4ODg2NDB9.CmSx9qi6gt8xf5sv-_NKVT62cg6ajdaeVprtGjQwYxo
+
+
+###
+DELETE  http://localhost:4500/users/client/delete/e9d426c5-0698-47eb-b7b8-bad30ef8b049
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlOWQ0MjZjNS0wNjk4LTQ3ZWItYjdiOC1iYWQzMGVmOGIwNDkiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwiaWF0IjoxNzEwODg1MDQwLCJleHAiOjE3MTA4ODg2NDB9.CmSx9qi6gt8xf5sv-_NKVT62cg6ajdaeVprtGjQwYxo
+
+###
+
+PUT  http://localhost:4500/users/client/update/2703d870-d850-42a1-b721-0d86ef1af2d5
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyNzAzZDg3MC1kODUwLTQyYTEtYjcyMS0wZDg2ZWYxYWYyZDUiLCJlbWFpbCI6Im1haWxpdEBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MTA4ODk4NjgsImV4cCI6MTcxMDg5MzQ2OH0.7HQdl6zkWqfv_Bm25FZP58iUMnf74nuyheQNd4YxXkw
+
+
+{
+    "firstName":"Dean",
+    "lastName":"Cook",
+    "email":"mailit@mail.com",
+    "password":"test12&34"  
+
+}
+###

@@ -17,4 +17,13 @@ export interface loginUserDetails{
     isDeleted:string
 }
 
+export interface updatedUser{
+    firstName:string
+    lastName:string  
+    role:string 
+    email:string 
+    password:string
+}
+
+
 

@@ -87,6 +87,7 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 exports.loginUser = loginUser;
 const checkUserDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (req.info) {
+        console.log(req.info);
         return res.json({
             info: req.info
         });

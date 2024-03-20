@@ -1,56 +1,56 @@
 <app-nav-bar></app-nav-bar>
-<div class="products">
+<div class="services">
     <div *ngIf="showSuccessMessage" class="successMsg">{{ successMsg }}</div>
 
-    <form id="productForm" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <form id="serviceForm" [formGroup]="serviceForm" (ngSubmit)="onSubmit()">
         <div class="form-section">
-            <!-- Product Name -->
-            <label for="productName">Service Name:</label>
-            <input type="text" id="productName" name="productName" required />
+            <!-- service Name -->
+            <label for="serviceName">Service Name:</label>
+            <input type="text" id="serviceName" name="serviceName" required />
 
-            <!-- Product Description -->
-            <label for="productDescription">Service Description:</label>
-            <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+            <!-- service Description -->
+            <label for="serviceDescription">Profile Overview:</label>
+            <textarea id="serviceDescription" name="serviceDescription" rows="4" required></textarea>
 
-            <!-- Product Category -->
-            <label for="productCategory">Service Category:</label>
-            <select id="productCategory" name="productCategory" required>
+            <!-- service Category -->
+            <label for="serviceCategory">Service Category:</label>
+            <select id="serviceCategory" name="serviceCategory" required>
                 <option value="electronics">Photography</option>
                 <!-- To be populated dynamically -->
             </select>
 
-            <!-- Product Stock -->
-            <label for="productStock">Location</label>
-            <input type="text" id="productStock" name="productStock" min="0" required />
-            <label for="productStock">Rates</label>
-            <input type="number" id="productStock" name="productStock" min="0" required />
-            <label for="productStock">Experience</label>
-            <input type="text" id="productStock" name="productStock" min="0" required />
+            <!-- service Stock -->
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" min="0" required />
+            <label for="rates">Rates</label>
+            <input type="number" id="rates" name="rates" min="0" required />
+            <label for="experience">Experience</label>
+            <input type="number" id="experience" name="experience" min="0" required />
 
-            <!-- Product Price -->
-            <div class="price">
-                <div class="price-div">
-                    <label for="Price"> Open From:</label>
-                    <input type="datetime-local" id="regularPrice" name="regularPrice" step="0.01" min="0" required />
+            <!-- service Price -->
+            <div class="time">
+                <div class="time-div">
+                    <label for="openTime"> Open From:</label>
+                    <input type="datetime-local" id="openTime" name="openTime" step="0.01" min="0" required />
                 </div>
-                <div class="price-div">
-                    <label for="Price"> To:</label>
-                    <input type="datetime-local" id="salePrice" name="saleprice" step="0.01" min="0" required />
+                <div class="time-div">
+                    <label for="closeTime"> To:</label>
+                    <input type="datetime-local" id="closeTime" name="closeTime" step="0.01" min="0" required />
                 </div>
             </div>
         </div>
         <div class="img-and-btn">
             <!-- Image Upload Section -->
             <div class="image-upload-section">
-                <label for="productImage">Product Image:</label>
+                <label for="serviceImage">service Image:</label>
                 <div id="drop-area" (click)="fileInput.click()">
                     <i class="fa-thin fa-image"></i>
                     <p>Drop an image here or browse</p>
                 </div>
-                <input type="file" #fileInput id="fileInput" name="productImage" accept="image/*" required />
+                <input type="file" #fileInput id="fileInput" name="serviceImage" accept="image/*" required />
             </div>
 
-            <!-- Add Product Button -->
+            <!-- Add service Button -->
             <div class="btn">
                 <button type="submit">Save</button>
                 <button type="submit" (click)="BackToDashboard()">Cancel</button>

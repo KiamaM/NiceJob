@@ -89,6 +89,8 @@ export const loginUser = async(req:Request, res:Response)=>{
 
 export const checkUserDetails = async(req:extendeUserRequest, res:Response)=>{
     if(req.info){
+        console.log(req.info);
+        
         return res.json({
             info:req.info
         })

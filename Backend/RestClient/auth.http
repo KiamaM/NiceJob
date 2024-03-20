@@ -2,7 +2,7 @@ POST http://localhost:4500/auth/login
 Content-Type: application/json
 
 {
-    "email":"sharoncherotich112@gmail.com",
+    "email":"mailit@mail.com",
     "password":"test12&34"
 }
 

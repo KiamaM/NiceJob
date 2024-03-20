@@ -7,7 +7,7 @@ app-nav-bar{
 }
 
 
-.products {
+.services {
     background-color: #e7e7e3;
     margin: 0;
     padding: 0;
@@ -69,7 +69,7 @@ app-nav-bar{
     resize: none;
   }
   
-  .price {
+  .time {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,13 +149,13 @@ app-nav-bar{
       justify-content: center;
     }
   
-    .price {
+    .time {
       flex-direction: column;
       width: 100%;
       text-align: center;
     }
   
-    .price-div {
+    .time-div {
       width: 100%;
     }
   
