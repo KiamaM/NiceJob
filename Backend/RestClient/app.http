@@ -1,3 +1,7 @@
+### USERS END POINTS
+
+
+
 POST  http://localhost:4500/users/register
 Content-Type: application/json
 
@@ -43,4 +47,35 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyNzAzZDg3MC1kODUwLTQyY
     "password":"test12&34"  
 
 }
+###
+
+
+
+
+
+
+### LISTINGS END POINTS
+
+POST  http://localhost:4500/listings
+Content-Type: application/json
+
+{
+    "serviceId":"",
+    "serviceName" :"Laundry",
+    "serviceDescription":"Clean laundry",
+    "serviceCategory":"Cleaning",
+    "location":"Nyeri-Skuta",
+    "rates":"300",
+    "openTime":"5:00",
+    "closeTime":"7:00",
+    "experience":"25",
+    "serviceImage":""
+}
+
+
+
+###
+GET  http://localhost:4500/listings
+Content-Type: application/json
+
 ###

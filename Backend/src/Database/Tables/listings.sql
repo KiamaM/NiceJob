@@ -10,9 +10,12 @@ CREATE TABLE listings(
     experience NUMERIC  NOT NULL,
     serviceImage VARCHAR(300) NOT NULL,
     isBooked BIT DEFAULT 0,
-    isDeleted BIT DEFAULT 0  
+    activeDate DATE,
+    isDeleted BIT DEFAULT 0
     )
 
     SELECT * FROM listings
 
     DELETE FROM listings;
+
+    ALTER TABLE listings ADD activeDate DATE

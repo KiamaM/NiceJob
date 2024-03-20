@@ -6,9 +6,12 @@ CREATE TABLE users(
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(300) NOT NULL,
     isWelcomed BIT DEFAULT 0,
-    isDeleted BIT DEFAULT 0  
+    isDeleted BIT DEFAULT 0,
+    registerDate DATE 
     )
 
     SELECT * FROM users
 
     DELETE FROM users;
+
+ALTER TABLE users ADD registerDate DATE
