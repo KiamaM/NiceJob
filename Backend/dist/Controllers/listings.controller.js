@@ -20,9 +20,9 @@ const createListing = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     try {
         const id = (0, uuid_1.v4)();
         console.log(id);
-        const { serviceName, serviceDescription, serviceCategory, location, rates, openTime, closeTime, experience, serviceImage } = req.body;
+        const { userId, serviceName, serviceDescription, serviceCategory, location, rates, openTime, closeTime, experience, serviceImage } = req.body;
         let result = yield dbhelper.execute('createListing', {
-            serviceId: id, serviceName, serviceDescription, serviceCategory, location, rates, openTime, closeTime, experience, serviceImage
+            serviceId: id, userId, serviceName, serviceDescription, serviceCategory, location, rates, openTime, closeTime, experience, serviceImage
         });
         if (result.rowsAffected[0] < 1) {
             return res.json({
@@ -41,7 +41,6 @@ const createListing = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
 });
 exports.createListing = createListing;
-//  PRODUCT CONTROLLERS
 const getAllListings = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let listings = (yield dbhelper.execute('getALLLIstings')).recordset;

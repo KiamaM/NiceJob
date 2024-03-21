@@ -12,25 +12,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.verifyToken = void 0;
-const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const verifyToken = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+exports.filterByCategory = void 0;
+const dbHelper_1 = __importDefault(require("../dbHelpers/dbHelper"));
+const dbhelper = new dbHelper_1.default;
+const filterByCategory = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const token = req.headers['token'];
-        if (!token) {
-            res.json({
-                error: 'You do not have access'
-            });
-        }
-        const data = jsonwebtoken_1.default.verify(token, process.env.SECRET);
-        req.info = data;
-        console.log(data);
+        const serviceCategory = req.params.serviceCategory;
+        let filterResults = (yield dbhelper.execute('filterByCategory', { serviceCategory })).recordset;
+        return res.json({
+            filterResults: filterResults
+        });
     }
     catch (error) {
         res.json({
-            error: error
+            error: error.originalError.message
         });
     }
-    next();
 });
-exports.verifyToken = verifyToken;
+exports.filterByCategory = filterByCategory;

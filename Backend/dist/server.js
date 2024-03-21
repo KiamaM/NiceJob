@@ -31,12 +31,18 @@ const cors_1 = __importDefault(require("cors"));
 const user_router_1 = __importDefault(require("./Router/user.router"));
 const auth_router_1 = __importDefault(require("./Router/auth.router"));
 const listings_router_1 = __importDefault(require("./Router/listings.router"));
+const profiles_router_1 = __importDefault(require("./Router/profiles.router"));
+const appointments_router_1 = __importDefault(require("./Router/appointments.router"));
+const search_router_1 = __importDefault(require("./Router/search.router"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use((0, express_1.json)());
 app.use('/users', user_router_1.default);
 app.use('/auth', auth_router_1.default);
 app.use('/listings', listings_router_1.default);
+app.use('/profiles', profiles_router_1.default);
+app.use('/appointments', appointments_router_1.default);
+app.use('/filter', search_router_1.default);
 app.use((err, req, res, next) => {
     res.json({
         message: err.message

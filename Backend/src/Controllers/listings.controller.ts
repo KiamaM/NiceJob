@@ -11,11 +11,11 @@ export const createListing = async(req:Request, res:Response)=>{
         const id = v4()
         console.log(id);
 
-        const{serviceName,serviceDescription, serviceCategory, location, rates, openTime, closeTime, experience, serviceImage}:newListing = req.body
+        const{userId,serviceName,serviceDescription, serviceCategory, location, rates, openTime, closeTime, experience, serviceImage}:newListing = req.body
         
 
         let result = await dbhelper.execute('createListing', {
-            serviceId:id, serviceName,serviceDescription, serviceCategory, location, rates, openTime, closeTime, experience, serviceImage
+            serviceId:id,userId, serviceName,serviceDescription, serviceCategory, location, rates, openTime, closeTime, experience, serviceImage
         })
         
         if(result.rowsAffected[0] < 1){
@@ -41,7 +41,6 @@ export const createListing = async(req:Request, res:Response)=>{
 
 
 
-//  PRODUCT CONTROLLERS
 
 
 

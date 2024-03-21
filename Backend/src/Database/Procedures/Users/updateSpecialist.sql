@@ -2,6 +2,7 @@ CREATE OR ALTER PROCEDURE updateSpecialist(
     @userId VARCHAR(100),
     @firstName VARCHAR(50),
     @lastName VARCHAR(50) ,
+    @phoneNumber VARCHAR(20),
     @email VARCHAR(100)
 )
 AS
@@ -9,7 +10,8 @@ AS
         UPDATE users SET 
                 firstName=@firstName,
                 lastName=@lastName, 
+                phoneNumber = @phoneNumber,
                 email=@email
 
-            WHERE userId = @userId
+            WHERE userId = @userId AND role = 'specialist'
     END

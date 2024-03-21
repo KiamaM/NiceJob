@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import Connection from "../dbHelpers/dbHelper";
 import { loginUserValidation } from "../Validators/user.validator";
 import bcrypt from 'bcrypt';
@@ -16,7 +16,7 @@ export const loginUser = async(req:Request, res:Response)=>{
 
         const{email, password} = req.body
 
-        // console.log(req.body);
+        console.log(req.body);
         
 
         let{error} = loginUserValidation.validate(req.body)
@@ -30,7 +30,7 @@ export const loginUser = async(req:Request, res:Response)=>{
             })
         }
 
-        let user:any = (await dbHelper.execute('login', {
+        let user = (await dbHelper.execute('login', {
             email
         })).recordset
         console.log(user);
@@ -47,7 +47,6 @@ export const loginUser = async(req:Request, res:Response)=>{
                     error: "Incorrect password"
                 })
             }else{
-                console.log('Hi');
                 
                 const loginCredentials = user.map((response:any)=>{
                     const{firstName, lastName, role, password,isDeleted, ...rest } = response
@@ -87,13 +86,45 @@ export const loginUser = async(req:Request, res:Response)=>{
 }
 
 
-export const checkUserDetails = async(req:extendeUserRequest, res:Response)=>{
+export const checkUserDetails = async(req:extendeUserRequest, res:Response, next:NextFunction)=>{
     if(req.info){
-        console.log(req.info);
+        console.log(req.info);       
+        
         
         return res.json({
             info:req.info
         })
+
+    }
+}
+
+
+export const authorize = (...role:string[])=>{
+    return async(req:extendeUserRequest, res:Response, next:NextFunction)=>{
+        if(req.info){
+            // console.log(req);
+            
+            console.log(req.info.role);
+            
+            
+            if(!role.includes(req.info.role)){
+                console.log('No permission');
+                
+
+                return res.json({
+                    error:'You do not have permission to perform this action',
+                }
+
+                )
+            }
+            console.log('Permission granted');
+            
+            
+            next()
+
+        }
+
+
     }
 }
 

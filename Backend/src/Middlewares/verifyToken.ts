@@ -22,6 +22,8 @@ export const verifyToken =async(req:extendeUserRequest, res:Response, next:NextF
         const data = jwt.verify(token, process.env.SECRET as string) as loginUserDetails
     
         req.info = data    
+        console.log(data);
+        
         
     } catch (error) {
         res.json({
@@ -33,3 +35,5 @@ export const verifyToken =async(req:extendeUserRequest, res:Response, next:NextF
     next()
 
 }
+
+

@@ -4,6 +4,7 @@ import joi from 'joi'
 export const registerUserValidation = joi.object({
     firstName:joi.string().required(),
     lastName:joi.string().required(),
+    phoneNumber:joi.string().required().min(10).message('Phone number cannot be less than 10 characters') ,
     role:joi.string(),
     email: joi.string().required().email({
         minDomainSegments: 2, tlds:{

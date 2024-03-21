@@ -8,6 +8,7 @@ const joi_1 = __importDefault(require("joi"));
 exports.registerUserValidation = joi_1.default.object({
     firstName: joi_1.default.string().required(),
     lastName: joi_1.default.string().required(),
+    phoneNumber: joi_1.default.string().required().min(10).message('Phone number cannot be less than 10 characters'),
     role: joi_1.default.string(),
     email: joi_1.default.string().required().email({
         minDomainSegments: 2, tlds: {

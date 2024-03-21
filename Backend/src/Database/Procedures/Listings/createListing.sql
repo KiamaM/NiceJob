@@ -1,5 +1,6 @@
 CREATE OR ALTER PROCEDURE createListing(
     @serviceId VARCHAR(100),
+    @userId VARCHAR(100),
     @serviceName VARCHAR(50) ,
     @serviceDescription VARCHAR(700),
     @serviceCategory VARCHAR(100),
@@ -12,6 +13,6 @@ CREATE OR ALTER PROCEDURE createListing(
 )
 AS 
     BEGIN
-        INSERT INTO listings(serviceId, serviceName,serviceDescription, serviceCategory, location, rates, openTime, closeTime, experience, serviceImage, activeDate)
-            VALUES(@serviceId, @serviceName,@serviceDescription, @serviceCategory, @location, @rates, @openTime, @closeTime, @experience, @serviceImage, GETDATE())
+        INSERT INTO listings(serviceId,userId, serviceName,serviceDescription, serviceCategory, location, rates, openTime, closeTime, experience, serviceImage, activeDate)
+            VALUES(@serviceId,@userId, @serviceName,@serviceDescription, @serviceCategory, @location, @rates, @openTime, @closeTime, @experience, @serviceImage, GETDATE())
     END

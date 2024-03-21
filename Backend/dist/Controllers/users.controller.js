@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateSpecialist = exports.deleteSpecialist = exports.getOneSpecialist = exports.getAllSpecialists = exports.updateClient = exports.deleteClient = exports.getOneClient = exports.getAllClients = exports.registerUser = void 0;
+exports.resetPassword = exports.updateSpecialist = exports.deleteSpecialist = exports.getOneSpecialist = exports.getAllSpecialists = exports.updateClient = exports.deleteClient = exports.getOneClient = exports.getAllClients = exports.registerUser = void 0;
 const uuid_1 = require("uuid");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const dbHelper_1 = __importDefault(require("../dbHelpers/dbHelper"));
@@ -22,7 +22,7 @@ const registerUser = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     try {
         const id = (0, uuid_1.v4)();
         console.log(id);
-        const { firstName, lastName, role, email, password } = req.body;
+        const { firstName, lastName, phoneNumber, role, email, password } = req.body;
         let { error } = user_validator_1.registerUserValidation.validate(req.body);
         if (error) {
             return res.json({
@@ -32,7 +32,7 @@ const registerUser = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         const hashedPwd = yield bcrypt_1.default.hash(password, 5);
         console.log(hashedPwd);
         let result = yield dbhelper.execute('registerUser', {
-            userId: id, firstName, lastName, role, email, hashedPwd
+            userId: id, firstName, lastName, phoneNumber, role, email, hashedPwd
         });
         if (result.rowsAffected[0] < 1) {
             return res.json({
@@ -100,12 +100,13 @@ exports.deleteClient = deleteClient;
 const updateClient = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = req.params.id;
-        const { firstName, lastName, role, email } = req.body;
+        const { firstName, lastName, phoneNumber, email } = req.body;
         const result = (yield dbhelper.execute('updateClient', {
             userId: id,
             firstName: firstName,
             lastName: lastName,
-            email: email
+            email: email,
+            phoneNumber: phoneNumber
         })).rowsAffected;
         console.log(result);
         return res.json({
@@ -168,12 +169,13 @@ exports.deleteSpecialist = deleteSpecialist;
 const updateSpecialist = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = req.params.id;
-        const { firstName, lastName, role, email } = req.body;
+        const { firstName, lastName, phoneNumber, email } = req.body;
         const result = (yield dbhelper.execute('updateSpecialist', {
             userId: id,
             firstName: firstName,
             lastName: lastName,
-            email: email
+            email: email,
+            phoneNumber: phoneNumber
         })).rowsAffected;
         console.log(result);
         return res.json({
@@ -187,3 +189,31 @@ const updateSpecialist = (req, res) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.updateSpecialist = updateSpecialist;
+const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { email, phoneNumber, password } = req.body;
+        const hashedPwd = yield bcrypt_1.default.hash(password, 5);
+        const result = (yield dbhelper.execute('resetPassword', {
+            email,
+            phoneNumber,
+            password: hashedPwd,
+        }));
+        if (result.returnValue < 1) {
+            return res.json({
+                message: 'User not found',
+            });
+        }
+        else {
+            return res.json({
+                message: 'Password updated successfully',
+            });
+        }
+    }
+    catch (error) {
+        console.error(error);
+        return res.status(501).json({
+            error: error.originalError.info.message
+        });
+    }
+});
+exports.resetPassword = resetPassword;

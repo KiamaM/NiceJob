@@ -6,10 +6,11 @@ POST  http://localhost:4500/users/register
 Content-Type: application/json
 
 {
-    "firstName":"Dean",
-    "lastName":"Cook",
+    "firstName":"Jane",
+    "lastName":"Doe",
+    "phoneNumber":"5553553553553",
     "role":"client",
-    "email":"mailit@mail.com",
+    "email":"mail@mail.com",
     "password":"test12&34"  
 }
 
@@ -17,34 +18,107 @@ Content-Type: application/json
 
 GET http://localhost:4500/users/all-clients
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlOWQ0MjZjNS0wNjk4LTQ3ZWItYjdiOC1iYWQzMGVmOGIwNDkiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwiaWF0IjoxNzEwODg5NzEyLCJleHAiOjE3MTA4OTMzMTJ9.QkyqQoWwXkYxp_z2Zhl3zLFpkIzK_yLa4VC96drNUak
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMTg5OTNjZS0yMjllLTQxNDItYTFkMy1hZWZkZTA0YjE4NTUiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJpYXQiOjE3MTA5NzY4MTMsImV4cCI6MTcxMDk4MDQxM30.LOH35ZntFaKgzgvDyyfUs6L3j4imzgknne6V-u2IjtQ
 
 
 ###
 
 
-GET http://localhost:4500/users/client/e9d426c5-0698-47eb-b7b8-bad30ef8b049
+GET http://localhost:4500/users/client/d18993ce-229e-4142-a1d3-aefde04b1855
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlOWQ0MjZjNS0wNjk4LTQ3ZWItYjdiOC1iYWQzMGVmOGIwNDkiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwiaWF0IjoxNzEwODg1MDQwLCJleHAiOjE3MTA4ODg2NDB9.CmSx9qi6gt8xf5sv-_NKVT62cg6ajdaeVprtGjQwYxo
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhMTAtOWExZC03ZTRiYWM1OWFkZWQiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTc2NTc5LCJleHAiOjE3MTA5ODAxNzl9.4R1lzGQNEPq8yX7vkf0QBOjqJtYMJlOx3Us4RPMMoZQ
 
 
 ###
-DELETE  http://localhost:4500/users/client/delete/e9d426c5-0698-47eb-b7b8-bad30ef8b049
+DELETE  http://localhost:4500/users/client/delete/bde96b7b-57ac-4c26-a3aa-bc5e568f879f
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlOWQ0MjZjNS0wNjk4LTQ3ZWItYjdiOC1iYWQzMGVmOGIwNDkiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwiaWF0IjoxNzEwODg1MDQwLCJleHAiOjE3MTA4ODg2NDB9.CmSx9qi6gt8xf5sv-_NKVT62cg6ajdaeVprtGjQwYxo
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhMTAtOWExZC03ZTRiYWM1OWFkZWQiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTc2NTc5LCJleHAiOjE3MTA5ODAxNzl9.4R1lzGQNEPq8yX7vkf0QBOjqJtYMJlOx3Us4RPMMoZQ
+
 
 ###
 
-PUT  http://localhost:4500/users/client/update/2703d870-d850-42a1-b721-0d86ef1af2d5
+PUT  http://localhost:4500/users/client/update/d18993ce-229e-4142-a1d3-aefde04b1855
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyNzAzZDg3MC1kODUwLTQyYTEtYjcyMS0wZDg2ZWYxYWYyZDUiLCJlbWFpbCI6Im1haWxpdEBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MTA4ODk4NjgsImV4cCI6MTcxMDg5MzQ2OH0.7HQdl6zkWqfv_Bm25FZP58iUMnf74nuyheQNd4YxXkw
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NjIxOGI3Zi1kYTc4LTQxYzItYjA4Mi0yMDJmNzM4NDg0MTQiLCJlbWFpbCI6Im1haWxvbjNAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTkxMzYyLCJleHAiOjE3MTA5OTQ5NjJ9.tl46macWsEOUmBuI04E5_5LkI5EykLf-NrKo1m3Jq7A
+
 
 
 {
-    "firstName":"Dean",
+    "firstName":"Debra",
     "lastName":"Cook",
-    "email":"mailit@mail.com",
+    "email":"mailon3@mail.com",
+    "phoneNumber":"12345673456",
     "password":"test12&34"  
+
+}
+###
+
+
+
+
+
+### SPECIALIST END POINTS
+
+POST  http://localhost:4500/users/register
+Content-Type: application/json
+
+{
+    "firstName":"Jim",
+    "lastName":"Sm",
+    "phoneNumber":"5553553553553",
+    "role":"specialist",
+    "email":"mailon@mail.com",
+    "password":"test12&34"  
+}
+
+###
+
+GET http://localhost:4500/users/all-specialists
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzExMDFjYS1jN2EzLTRlMzUtOTIwMy0zZDkwN2E0MDI0ZjYiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE3MTEwMTk0MjksImV4cCI6MTcxMTAyMzAyOX0.YKfSsF4DO1MkaJCqSDY8LJ68RwKGN_5CPtY7RsNOLVY
+
+
+###
+
+
+GET http://localhost:4500/users/specialist/3ecb7d15-f5b6-4212-9d0b-0d740034c0f2
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhMTAtOWExZC03ZTRiYWM1OWFkZWQiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTc2NTc5LCJleHAiOjE3MTA5ODAxNzl9.4R1lzGQNEPq8yX7vkf0QBOjqJtYMJlOx3Us4RPMMoZQ
+
+
+###
+DELETE  http://localhost:4500/users/specialist/delete/3ecb7d15-f5b6-4212-9d0b-0d740034c0f2
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhMTAtOWExZC03ZTRiYWM1OWFkZWQiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTc2NTc5LCJleHAiOjE3MTA5ODAxNzl9.4R1lzGQNEPq8yX7vkf0QBOjqJtYMJlOx3Us4RPMMoZQ
+
+
+###
+
+PUT  http://localhost:4500/users/specialist/update/3ecb7d15-f5b6-4212-9d0b-0d740034c0f2
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhMTAtOWExZC03ZTRiYWM1OWFkZWQiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTc2NTc5LCJleHAiOjE3MTA5ODAxNzl9.4R1lzGQNEPq8yX7vkf0QBOjqJtYMJlOx3Us4RPMMoZQ
+
+
+
+{
+    "firstName": "Jim",
+    "lastName": "Sm",
+    "phoneNumber": "5553553553553",
+    "email": "mailone2@mail.com",
+    "password": "$2b$05$6fSm"
+
+}
+###
+
+PUT  http://localhost:4500/users/reset-password
+Content-Type: application/json
+
+
+{
+
+    "email":"mailon@mail.com",
+    "phoneNumber":"12345673456",
+    "password":"test12&677"  
 
 }
 ###
@@ -61,9 +135,10 @@ Content-Type: application/json
 
 {
     "serviceId":"",
+    "userId":"d31101ca-c7a3-4e35-9203-3d907a4024f6",
     "serviceName" :"Laundry",
     "serviceDescription":"Clean laundry",
-    "serviceCategory":"Cleaning",
+    "serviceCategory":"Photography",
     "location":"Nyeri-Skuta",
     "rates":"300",
     "openTime":"5:00",
@@ -79,3 +154,116 @@ GET  http://localhost:4500/listings
 Content-Type: application/json
 
 ###
+
+
+
+
+
+
+
+
+
+### LISTING PROFILES ENDPOINTS
+
+GET http://localhost:4500/profiles
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMTg5OTNjZS0yMjllLTQxNDItYTFkMy1hZWZkZTA0YjE4NTUiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJpYXQiOjE3MTA5NzY4MTMsImV4cCI6MTcxMDk4MDQxM30.LOH35ZntFaKgzgvDyyfUs6L3j4imzgknne6V-u2IjtQ
+
+
+###
+
+
+GET http://localhost:4500/profiles/d31101ca-c7a3-4e35-9203-3d907a4024f6
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhMTAtOWExZC03ZTRiYWM1OWFkZWQiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTc2NTc5LCJleHAiOjE3MTA5ODAxNzl9.4R1lzGQNEPq8yX7vkf0QBOjqJtYMJlOx3Us4RPMMoZQ
+
+
+###
+DELETE  http://localhost:4500/profiles/delete/bde96b7b-57ac-4c26-a3aa-bc5e568f879f
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhMTAtOWExZC03ZTRiYWM1OWFkZWQiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTc2NTc5LCJleHAiOjE3MTA5ODAxNzl9.4R1lzGQNEPq8yX7vkf0QBOjqJtYMJlOx3Us4RPMMoZQ
+
+
+###
+
+
+
+
+
+
+
+
+
+
+
+### APPOINTMENTS ENDPONTS
+POST  http://localhost:4500/appointments
+Content-Type: application/json
+
+{
+    "profileId":"",
+    "userId":"d31101ca-c7a3-4e35-9203-3d907a4024f6",
+    "listingId":"103b62de-e651-40cb-a61c-6da1d9f0a911",
+    "appointmentDate":"01-03-2024"
+}
+
+###  Get all appointments
+
+
+GET http://localhost:4500/appointments/d31101ca-c7a3-4e35-9203-3d907a4024f6
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMTg5OTNjZS0yMjllLTQxNDItYTFkMy1hZWZkZTA0YjE4NTUiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJpYXQiOjE3MTA5NzY4MTMsImV4cCI6MTcxMDk4MDQxM30.LOH35ZntFaKgzgvDyyfUs6L3j4imzgknne6V-u2IjtQ
+
+
+### Get one appointment
+
+
+GET http://localhost:4500/appointments/appointment/114fe389-0e79-4c16-9463-37ed26e0319d
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhMTAtOWExZC03ZTRiYWM1OWFkZWQiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTc2NTc5LCJleHAiOjE3MTA5ODAxNzl9.4R1lzGQNEPq8yX7vkf0QBOjqJtYMJlOx3Us4RPMMoZQ
+
+
+###
+DELETE  http://localhost:4500/appointments/cancel-appointment/114fe389-0e79-4c16-9463-37ed26e0319d
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhMTAtOWExZC03ZTRiYWM1OWFkZWQiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTc2NTc5LCJleHAiOjE3MTA5ODAxNzl9.4R1lzGQNEPq8yX7vkf0QBOjqJtYMJlOx3Us4RPMMoZQ
+
+
+###
+
+PUT  http://localhost:4500/appointments/reschedule/79ca0968-30ec-48cc-baa4-bae9f636a745
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NjIxOGI3Zi1kYTc4LTQxYzItYjA4Mi0yMDJmNzM4NDg0MTQiLCJlbWFpbCI6Im1haWxvbjNAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTkxMzYyLCJleHAiOjE3MTA5OTQ5NjJ9.tl46macWsEOUmBuI04E5_5LkI5EykLf-NrKo1m3Jq7A
+
+
+
+{
+    "profileId":"",
+    "userId":"d31101ca-c7a3-4e35-9203-3d907a4024f6",
+    "listingId":"103b62de-e651-40cb-a61c-6da1d9f0a911",
+    "appointmentDate":"01-04-2024" 
+
+}
+
+
+
+
+###     FILTER BY CATEGORY
+
+GET http://localhost:4500/filter/Photography
+Content-Type: application/json
+
+
+
+###
+
+
+
+
+
+
+
+
+
+
+
