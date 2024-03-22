@@ -6,6 +6,7 @@ import listingsRouter from './Router/listings.router'
 import profileRouter from './Router/profiles.router'
 import appointmentRouter from './Router/appointments.router'
 import searchRouter from './Router/search.router'
+import reviewsRouter from './Router/reviews.router'
 
 const app = express()
 
@@ -19,6 +20,7 @@ app.use('/listings', listingsRouter)
 app.use('/profiles', profileRouter)
 app.use('/appointments', appointmentRouter)
 app.use('/filter', searchRouter)
+app.use('/reviews', reviewsRouter)
 
 
 

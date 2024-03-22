@@ -136,8 +136,8 @@ Content-Type: application/json
 {
     "serviceId":"",
     "userId":"d31101ca-c7a3-4e35-9203-3d907a4024f6",
-    "serviceName" :"Laundry",
-    "serviceDescription":"Clean laundry",
+    "serviceName" :"Event Photography",
+    "serviceDescription":"Clean photos",
     "serviceCategory":"Photography",
     "location":"Nyeri-Skuta",
     "rates":"300",
@@ -203,7 +203,7 @@ Content-Type: application/json
 {
     "profileId":"",
     "userId":"d31101ca-c7a3-4e35-9203-3d907a4024f6",
-    "listingId":"103b62de-e651-40cb-a61c-6da1d9f0a911",
+    "listingId":"051deee4-c4fd-48aa-8a66-ce3e233b39b7",
     "appointmentDate":"01-03-2024"
 }
 
@@ -255,8 +255,73 @@ Content-Type: application/json
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+###     REVIEWS END POINTS
+
+
+POST  http://localhost:4500/reviews
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzExMDFjYS1jN2EzLTRlMzUtOTIwMy0zZDkwN2E0MDI0ZjYiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE3MTEwNjkzMzAsImV4cCI6MTcxMTA3MjkzMH0.AzNaKC_T1CAqB0ojs4w1s066HVqf9NN1o9pVB3i6xI8
+
+{
+    "reviewId":"",
+    "userId":"d31101ca-c7a3-4e35-9203-3d907a4024f6",
+    "profileId":"49cd741c-9728-4574-8354-c01db0e55e65",
+    "review":"Great Job done!",
+    "rating": 5
+
+}
+
+###  Get all profile reviews
+
+
+GET http://localhost:4500/reviews/profile-reviews/49cd741c-9728-4574-8354-c01db0e55e65
+Content-Type: application/json
+
+###  Get all user reviews
+
+
+GET http://localhost:4500/reviews/user-reviews/d31101ca-c7a3-4e35-9203-3d907a4024f6
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzExMDFjYS1jN2EzLTRlMzUtOTIwMy0zZDkwN2E0MDI0ZjYiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE3MTEwNjkzMzAsImV4cCI6MTcxMTA3MjkzMH0.AzNaKC_T1CAqB0ojs4w1s066HVqf9NN1o9pVB3i6xI8
+
+
+### Get one review
+
+
+GET http://localhost:4500/reviews/review/9cfa423a-7f68-49c2-bcb6-b6f4e738798d
+Content-Type: application/json
+
+
+###
+DELETE  http://localhost:4500/reviews//delete-review/6701dc82-6b1b-4487-9ec6-1f0f40da1661
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzExMDFjYS1jN2EzLTRlMzUtOTIwMy0zZDkwN2E0MDI0ZjYiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE3MTEwNjkzMzAsImV4cCI6MTcxMTA3MjkzMH0.AzNaKC_T1CAqB0ojs4w1s066HVqf9NN1o9pVB3i6xI8
+
+
 ###
 
+PUT  http://localhost:4500/reviews/update-review/9cfa423a-7f68-49c2-bcb6-b6f4e738798d
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzExMDFjYS1jN2EzLTRlMzUtOTIwMy0zZDkwN2E0MDI0ZjYiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE3MTEwNjkzMzAsImV4cCI6MTcxMTA3MjkzMH0.AzNaKC_T1CAqB0ojs4w1s066HVqf9NN1o9pVB3i6xI8
+
+
+
+{
+    "review":"Great Job done! Lovely!",
+    "rating": 5
+
+}
 
 
 

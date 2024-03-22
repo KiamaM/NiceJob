@@ -6,7 +6,7 @@ CREATE OR ALTER PROCEDURE scheduleAppointment(
 )
 AS 
     BEGIN
-        IF NOT EXISTS(SELECT * FROM specialistProfile WHERE userId = @userId)
+        IF NOT EXISTS(SELECT * FROM specialistProfile WHERE listingId = @listingId)
             BEGIN
                 INSERT INTO specialistProfile(profileId,userId, listingId,isBooked, isCancelled, appointmentDate)
                     VALUES(@profileId,@userId, @listingId,1, 0,  @appointmentDate)
