@@ -23,7 +23,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.checkUserDetails = exports.loginUser = void 0;
+exports.authorize = exports.checkUserDetails = exports.loginUser = void 0;
 const dbHelper_1 = __importDefault(require("../dbHelpers/dbHelper"));
 const user_validator_1 = require("../Validators/user.validator");
 const bcrypt_1 = __importDefault(require("bcrypt"));
@@ -33,7 +33,7 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b;
     try {
         const { email, password } = req.body;
-        // console.log(req.body);
+        console.log(req.body);
         let { error } = user_validator_1.loginUserValidation.validate(req.body);
         console.log(error);
         if (error) {
@@ -55,7 +55,6 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 });
             }
             else {
-                console.log('Hi');
                 const loginCredentials = user.map((response) => {
                     const { firstName, lastName, role, password, isDeleted } = response, rest = __rest(response, ["firstName", "lastName", "role", "password", "isDeleted"]);
                     console.log(response);
@@ -85,11 +84,29 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.loginUser = loginUser;
-const checkUserDetails = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const checkUserDetails = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     if (req.info) {
+        console.log(req.info);
         return res.json({
             info: req.info
         });
     }
 });
 exports.checkUserDetails = checkUserDetails;
+const authorize = (...role) => {
+    return (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+        if (req.info) {
+            // console.log(req);
+            console.log(req.info.role);
+            if (!role.includes(req.info.role)) {
+                console.log('No permission');
+                return res.json({
+                    error: 'You do not have permission to perform this action',
+                });
+            }
+            console.log('Permission granted');
+            next();
+        }
+    });
+};
+exports.authorize = authorize;

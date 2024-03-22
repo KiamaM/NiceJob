@@ -15,7 +15,7 @@ import { BackNavigationComponent } from '../back-navigation/back-navigation.comp
 })
 export class AddListingComponent {
 
-  productForm!: FormGroup
+  serviceForm!: FormGroup
   successMsg: string = ''
   showSuccessMessage: boolean = false
 

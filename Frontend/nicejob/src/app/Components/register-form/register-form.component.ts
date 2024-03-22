@@ -5,6 +5,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { SetRoleService } from '../../Services/set-role.service';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { RegisterService } from '../../Services/register.service';
 
 
 
@@ -31,7 +32,7 @@ export class RegisterFormComponent {
   
   
 
-  constructor(private fb: FormBuilder,public roleService:SetRoleService,private router:Router) {
+  constructor(private fb: FormBuilder,public roleService:SetRoleService,private router:Router, private registerService:RegisterService) {
     this.registerForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -51,18 +52,18 @@ export class RegisterFormComponent {
 
     const registerDetails = this.registerForm.value
 
-    // this.registerService.registerUser(registerDetails).subscribe(
-    //   response=>{
-    //     console.log(response);
-    //     this.registerForm.reset()
-    //     this.router.navigate(['login'])
+    this.registerService.registerUser(registerDetails).subscribe(
+      response=>{
+        console.log(response);
+        this.registerForm.reset()
+        this.router.navigate(['login'])
         
-    //   },
-    //   error=>{
-    //     console.error(error);
+      },
+      error=>{
+        console.error(error);
         
-    //   }
-    // )
+      }
+    )
     this.registerForm.reset()
     this.router.navigate(['login'])
     
@@ -74,6 +75,7 @@ export class RegisterFormComponent {
 
   receiveRole(){
     console.log(this.roleService.role);
+        
     
   }
 

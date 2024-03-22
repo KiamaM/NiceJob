@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { createdUser } from "../Interfaces/users.interface";
+import { createdUser, updatedUser,  } from "../Interfaces/users.interface";
 import {v4} from 'uuid'
 import bcrypt from 'bcrypt'
 import Connection from "../dbHelpers/dbHelper";
@@ -12,7 +12,7 @@ export const registerUser = async(req:Request, res:Response)=>{
         const id = v4()
         console.log(id);
 
-        const{firstName, lastName, role, email, password}:createdUser = req.body
+        const{firstName, lastName,phoneNumber, role, email, password}:createdUser = req.body
 
         let{error} = registerUserValidation.validate(req.body)     
         
@@ -27,7 +27,7 @@ export const registerUser = async(req:Request, res:Response)=>{
 
 
         let result = await dbhelper.execute('registerUser', {
-            userId:id, firstName, lastName, role, email, hashedPwd
+            userId:id, firstName, lastName,phoneNumber, role, email, hashedPwd
         })
         
         if(result.rowsAffected[0] < 1){
@@ -49,5 +49,236 @@ export const registerUser = async(req:Request, res:Response)=>{
         })
     }
 }
+
+
+
+
+//  CLIENT CONTROLLERS
+
+
+
+
+export const getAllClients = async(req:Request, res:Response)=>{
+    try {
+
+        let clients = (await dbhelper.execute('getAllClients')).recordset
+
+        return res.json({
+            clients:clients
+        })
+        
+    } catch (error:any) {
+        res.json({
+            error:error.originalError.message
+        })
+    }
+}
+
+export const getOneClient = async(req:Request, res:Response)=>{
+    try {
+
+        const id = req.params.id
+
+        let user = (await dbhelper.execute('getOneClient', {userId:id})).recordset
+
+        console.log(user);
+
+        return res.json({
+            user
+        })
+        
+        
+    } catch (error:any) {
+        return res.json({
+            error:error.originalError.message
+        })
+    }
+}
+
+export const deleteClient = async(req:Request, res:Response)=>{
+
+    try {
+        const id = req.params.id
+
+        const result = (await dbhelper.execute('deleteClient', {userId:id})).rowsAffected
+
+        return res.json({
+            message:'Account deactivated successfully'
+        })
+        
+    } catch (error:any) {
+
+        return res.json({
+            error:error.originalError.message
+        })
+        
+    }
+
+
+
+}
+
+
+export const updateClient = async(req:Request, res:Response)=>{
+    try {
+        const id = req.params.id
+
+        const{firstName, lastName, phoneNumber, email}:updatedUser= req.body
+
+        const result = (await dbhelper.execute('updateClient', {
+            userId:id, 
+            firstName:firstName,
+            lastName:lastName,
+            email:email,
+            phoneNumber:phoneNumber
+        })).rowsAffected
+
+
+        console.log(result);
+        
+
+        return res.json({
+            message:"Profile updated successfully"
+        })
+        
+
+
+        
+    } catch (error:any) {
+        return res.json({
+            error:error.originalError.message
+        })
+    }
+}
+
+
+
+
+
+
+//    SPECIALIST CONTROLLERS
+
+
+export const getAllSpecialists = async(req:Request, res:Response)=>{
+    try {
+
+        let specialists = (await dbhelper.execute('getAllSpecialists')).recordset
+
+        return res.json({
+            specialists:specialists
+        })
+        
+    } catch (error:any) {
+        res.json({
+            error:error.originalError.message
+        })
+    }
+}
+
+export const getOneSpecialist = async(req:Request, res:Response)=>{
+    try {
+
+        const id = req.params.id
+
+        let specialist = (await dbhelper.execute('getOneSpecialist', {userId:id})).recordset
+
+        console.log(specialist);
+
+        return res.json({
+            specialist
+        })
+        
+        
+    } catch (error:any) {
+        return res.json({
+            error:error.originalError.message
+        })
+    }
+}
+
+export const deleteSpecialist = async(req:Request, res:Response)=>{
+
+    try {
+        const id = req.params.id
+
+        const result = (await dbhelper.execute('deleteSpecialist', {userId:id})).rowsAffected
+
+        return res.json({
+            message:'Account deactivated successfully'
+        })
+        
+    } catch (error:any) {
+
+        return res.json({
+            error:error.originalError.message
+        })
+        
+    }
+
+
+
+}
+
+export const updateSpecialist = async(req:Request, res:Response)=>{
+    try {
+        const id = req.params.id
+
+        const{firstName, lastName, phoneNumber, email}:updatedUser= req.body
+
+        const result = (await dbhelper.execute('updateSpecialist', {
+            userId:id, 
+            firstName:firstName,
+            lastName:lastName,
+            email:email,
+            phoneNumber:phoneNumber
+        })).rowsAffected
+
+
+        console.log(result);
+        
+
+        return res.json({
+            message:"Profile updated successfully"
+        })
+        
+
+
+        
+    } catch (error:any) {
+        return res.json({
+            error:error.originalError.message
+        })
+    }
+}
+
+export const resetPassword = async (req: Request, res: Response) => {
+    try {
+      const { email,phoneNumber, password } = req.body;
+      
+      const hashedPwd = await bcrypt.hash(password, 5);
+  
+      const result =(await dbhelper.execute('resetPassword', {
+        email,
+        phoneNumber,
+        password: hashedPwd,
+      }));
+  
+      if (result.returnValue < 1) {
+        return res.json({
+          message: 'User not found',
+        });
+      } else {
+        return res.json({
+          message: 'Password updated successfully',
+        });
+      }
+    } catch (error:any) {
+        console.error(error);
+        
+      return res.status(501).json({
+        error:error.originalError.info.message
+    });
+    }
+  };
 
 
