@@ -8,7 +8,7 @@ import { SetRoleService } from '../../Services/set-role.service';
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [RouterLinkActive, RolePromptComponent, RouterOutlet, RouterLinkActive, CommonModule, RouterLink, BackNavigationComponent],
+  imports: [RouterLinkActive, RolePromptComponent, RouterOutlet, CommonModule, RouterLink, BackNavigationComponent],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
@@ -79,16 +79,18 @@ export class NavBarComponent{
   defineSpecialist(){
     this.openrolePrompt()
     this.roleService.role = 'Specialist'
-    console.log(this.roleService.role);
-    this.rolePrompt.nativeElement.style.display = 'none';
+    localStorage.setItem('role', this.roleService.role)
+    this.closerolePrompt()
+    // this.rolePrompt.nativeElement.style.display = 'none';
     this.router.navigate(['register'])
     
   }
 
   defineClient(){
     this.roleService.role = 'Client'
-    console.log(this.roleService.role);
-    this.rolePrompt.nativeElement.style.display = 'none';
+    localStorage.setItem('role', this.roleService.role)
+    this.closerolePrompt()
+    // this.rolePrompt.nativeElement.style.display = 'none';
     this.router.navigate(['register'])
   }
 

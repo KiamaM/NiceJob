@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { RegisterFormComponent } from './Components/register-form/register-form.component';
 import { LandingPageComponent } from './Components/landing-page/landing-page.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ViewListingsComponent } from './Components/view-listings/view-listings.component';
@@ -11,11 +10,12 @@ import { SpecialistDashboardComponent } from './Components/specialist-dashboard/
 import { ClientDashboardComponent } from './Components/client-dashboard/client-dashboard.component';
 import { AddListingComponent } from './Components/add-listing/add-listing.component';
 import { WildCardComponent } from './Components/wild-card/wild-card.component';
+import { RegisterFormComponent } from './Components/register-form/register-form.component';
 
 export const routes: Routes = [
-    {path: 'register', component:RegisterFormComponent},
     {path: '', component:LandingPageComponent},
     {path: 'login', component:LoginComponent},
+    {path: 'register', component:RegisterFormComponent},
     {path: 'listings', component:ViewListingsComponent},  
     {path: 'listing-profile', component:ListingProfileComponent},   
     {path: 'appointment-page', component:AppointmentPageComponent},  
@@ -24,7 +24,6 @@ export const routes: Routes = [
     {path: 'client-dashboard', component:ClientDashboardComponent},     
     {path: 'specialist-dashboard', component:SpecialistDashboardComponent},  
     {path: 'add-listing', component:AddListingComponent},  
-    {path:'**', component:WildCardComponent},      
-      
+    {path:'**', component:WildCardComponent},         
     
 ];
