@@ -13,11 +13,12 @@
             </div>
         </div>
         <div class="links">
-            <span  (click)=" defineSpecialist()">Apply as a specialist</span>
-            <!-- <span routerLink="/register">Hire top talent</span> -->
-            <!-- <span id="login" routerLink="/login">Login</span> -->
-            <span id="login" routerLink="/login">Login</span>
-            <button (click)="  openrolePrompt() " id="signUp">Sign Up</button>
+            <span *ngIf="!isLoggedIn"  (click)=" defineSpecialist()" >Apply as a specialist</span>
+            <span  *ngIf="!isLoggedIn" id="login" routerLink="/login">Login</span>
+            <button *ngIf="!isLoggedIn" (click)="  openrolePrompt() " id="signUp">Sign Up</button>
+            <span  *ngIf="isLoggedIn">Notifications</span>
+            <span  *ngIf="isLoggedIn" (click)="openDashboard()">Profile</span>
+            <button *ngIf="isLoggedIn" (click)="  logout() " id="signUp">Logout</button>
         </div>
     </div>
 </div>
@@ -50,4 +51,4 @@
     </div>
 </dialog>
 
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->

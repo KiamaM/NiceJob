@@ -17,6 +17,7 @@ app-nav-bar{
     width: 98vw;
     --categoriesWidth:94vw;
     --backNavColor: transparent;
+    z-index: 15;
 }
 
 
@@ -402,6 +403,45 @@ input:checked + label .desc{
 
 
   }
+
+  /* Role Prompt Stlyling */
+
+ .roleModal {
+    position: absolute;
+    top: 30vh;
+    left: 40vw;
+    width: 30vw;
+    padding: 20px;
+    background-color: #d4d0d0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(250, 249, 249, 0.034);
+  }
+  h2 {
+    margin-top: 0;
+  }
+  .roleModal button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    background-color: #298e46;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 40%;
+  }
+  
+  .roleButtons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  
+  .roleButtons button:hover {
+    background-color: #2c974b;
+  } 
+  
+  
 
 
 

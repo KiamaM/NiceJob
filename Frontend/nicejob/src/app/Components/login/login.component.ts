@@ -6,6 +6,9 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { loginUserDetails } from '../../Interfaces/auth.interface';
 import { AuthService } from '../../Services/auth.service';
 
+import Swal from 'sweetalert2'
+
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -45,18 +48,17 @@ export class LoginComponent {
 
         localStorage.setItem('token', res.token)
 
-        // console.log(res.token);
-        
-        let newToken = localStorage.getItem('token') as string
-        console.log(newToken);
+        // console.log(res.token);   
+
         
 
-        this.authservice.readToken(newToken).subscribe(res=>{
+        this.authservice.readToken(res.token).subscribe(res=>{
           console.log(res);
+
 
           setTimeout(() => {
             this.visible2 = false
-            console.log(res.info.email);
+            console.log(res.info.role);
             
             
             if(res.info.role == 'admin'){
@@ -68,6 +70,37 @@ export class LoginComponent {
               this.router.navigate(['client-dashboard'])
             }
           }, 2000);
+          let timerInterval:any;
+          Swal.fire({
+          title: 'Logged in successfully!',
+          text: 'Logging you in...!',
+          icon: 'success',
+          timer: 2000,
+          timerProgressBar: true,
+          buttonsStyling: false,
+          customClass: {
+              confirmButton: 'btn btn-primary px-4'
+              },
+              didOpen: () => {
+              Swal.showLoading();
+              timerInterval = setInterval(() => {
+                  const content = Swal.getHtmlContainer();
+                  if (content) {
+                  const b: any = content.querySelector('b');
+                  if (b) {
+                      b.textContent = Swal.getTimerLeft();
+                  }
+                  }
+              }, 100);
+              },
+              willClose: () => {
+              clearInterval(timerInterval);
+              },
+          }).then((result) => {
+              /* Read more about handling dismissals below */
+              if (result.dismiss === Swal.DismissReason.timer) {
+              }
+          });
         })
 
         

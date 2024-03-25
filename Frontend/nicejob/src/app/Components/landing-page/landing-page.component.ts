@@ -80,16 +80,16 @@ export class LandingPageComponent {
     this.openrolePrompt()
     this.roleService.role = 'Specialist'
     console.log(this.roleService.role);
-    this.rolePrompt.nativeElement.style.display = 'none';
-    this.openRegisterModal()
+    this.closerolePrompt()
+    this.router.navigate(['register'])
     
   }
 
   defineClient(){
     this.roleService.role = 'Client'
     console.log(this.roleService.role);
-    this.rolePrompt.nativeElement.style.display = 'none';
-    this.openRegisterModal()
+    this.closerolePrompt()
+    this.router.navigate(['register'])
   }
 
 }

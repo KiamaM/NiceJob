@@ -5,12 +5,12 @@
     <div class="adminSidebar">
         <div class="sidebarNav">
             <button><i class="fa-solid fa-house"></i>Dashboard</button>
-            <button><i class="fa-solid fa-user-group"></i>Specialists</button>
-            <button><i class="fa-regular fa-star"></i>Reviews</button>
-            <button><i class="fa-solid fa-list-check"></i>Listings</button>
-            <button><i class="fa-solid fa-exclamation"></i>Complaints</button>
-            <button><i class="fa-solid fa-message"></i>Messages</button>
-            <button><i class="fa-solid fa-file-invoice-dollar"></i>Payments</button>
+            <!-- <button><i class="fa-solid fa-user-group"></i>Specialists</button> -->
+            <button routerLink="/specialist-dashboard/reviews" routerLinkActive = "active"><i class="fa-regular fa-star"></i>Reviews</button>
+            <button routerLink="/specialist-dashboard/dashboard-profiles" routerLinkActive = "active"><i class="fa-solid fa-list-check"></i>Listings</button>
+            <!-- <button><i class="fa-solid fa-exclamation"></i>Complaints</button> -->
+            <!-- <button><i class="fa-solid fa-message"></i>Messages</button> -->
+            <!-- <button><i class="fa-solid fa-file-invoice-dollar"></i>Payments</button> -->
         </div>
     </div>
     <div class="adminDisplay">
@@ -21,6 +21,7 @@
             </div>
         </div>
         <div class="adminContent">
+            <router-outlet></router-outlet>
             <p id = 'noProjects'>Nothing to show at the moment. Activity will be displayed here</p>
         </div>
     </div>

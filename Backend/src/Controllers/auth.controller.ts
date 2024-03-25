@@ -49,7 +49,7 @@ export const loginUser = async(req:Request, res:Response)=>{
             }else{
                 
                 const loginCredentials = user.map((response:any)=>{
-                    const{firstName, lastName, role, password,isDeleted, ...rest } = response
+                    const{registerDate, isDeleted, isWelcomed, password, ...rest } = response
                     console.log(response);
                     
 
@@ -61,7 +61,7 @@ export const loginUser = async(req:Request, res:Response)=>{
 
                 const token = jwt.sign(loginCredentials[0], process.env['SECRET'] as string,
                 {
-                    expiresIn:'3600s'
+                    expiresIn:'3d'
                 }
                 )
                 console.log(token);
@@ -96,6 +96,7 @@ export const checkUserDetails = async(req:extendeUserRequest, res:Response, next
         })
 
     }
+
 }
 
 

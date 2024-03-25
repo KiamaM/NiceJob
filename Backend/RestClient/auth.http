@@ -7,4 +7,6 @@ Content-Type: application/json
 }
 
 ###
-
+GET http://localhost:4500/auth/check-user-details
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyZmQzZmQxYy05N2UxLTRjZDMtYmQyMS03MDg4YTlmYjllYWQiLCJmaXJzdE5hbWUiOiJEIiwibGFzdE5hbWUiOiJNIiwicGhvbmVOdW1iZXIiOiIxMjM0NTY3MTIzNCIsInJvbGUiOiJjbGllbnQiLCJlbWFpbCI6Im11cmlpdGhpa2lhbWFkMSsxMjM0QGdtYWlsLmNvbSIsImlhdCI6MTcxMTMyMzU4MywiZXhwIjoxNzExMzI3MTgzfQ.DpqNmE_RvR2vIJMsuYGhxxrGuwuqA3eaqoMIZf8oqkI

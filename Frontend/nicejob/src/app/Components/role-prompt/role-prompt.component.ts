@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component,} from '@angular/core';
 import { SetRoleService } from '../../Services/set-role.service';
 
 @Component({

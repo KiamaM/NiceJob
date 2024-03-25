@@ -4,21 +4,23 @@
     <div class="adminSidebar">
         <div class="sidebarNav">
             <button><i class="fa-solid fa-house"></i>Dashboard</button>
-            <button><i class="fa-solid fa-user-group"></i>Specialists</button>
-            <button><i class="fa-solid fa-user-group"></i>Clients</button>
-            <button><i class="fa-solid fa-list-check"></i>Listings</button>
-            <button><i class="fa-solid fa-exclamation"></i>Complaints</button>
-            <button><i class="fa-solid fa-message"></i>Messages</button>
-            <button><i class="fa-solid fa-file-invoice-dollar"></i>Payments</button>
+            <button routerLink="/admin-dashboard/view-specialists" routerLinkActive = "active"><i class="fa-solid fa-user-group"></i>Specialists</button>
+            <button routerLink = "/admin-dashboard/view-clients" routerLinkActive = "active"><i class="fa-solid fa-user-group" ></i>Clients</button>
+            <button routerLink="/admin-dashboard/dashboard-profiles" routerLinkActive = "active"><i class="fa-solid fa-list-check"></i>Listings</button>
+            <!-- <button><i class="fa-solid fa-exclamation"></i>Complaints</button> -->
+            <!-- <button><i class="fa-solid fa-message"></i>Messages</button> -->
+            <!-- <button><i class="fa-solid fa-file-invoice-dollar"></i>Payments</button> -->
         </div>
     </div>
     <div class="adminDisplay">
         <div class="adminTop">              
-            <h2>Dashboard</h2>
+            <h2>{{dashboardH2Text}}</h2>
         </div>
         <div class="adminContent">
+            <router-outlet></router-outlet>
             <p id = 'noProjects'>Nothing to show at the moment. Activity will be displayed here</p>
         </div>
+
     </div>
 
 </div>

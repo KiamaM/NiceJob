@@ -56,13 +56,13 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             }
             else {
                 const loginCredentials = user.map((response) => {
-                    const { firstName, lastName, role, password, isDeleted } = response, rest = __rest(response, ["firstName", "lastName", "role", "password", "isDeleted"]);
+                    const { registerDate, isDeleted, isWelcomed, password } = response, rest = __rest(response, ["registerDate", "isDeleted", "isWelcomed", "password"]);
                     console.log(response);
                     return rest;
                 });
                 console.log(process.env.SECRET);
                 const token = jsonwebtoken_1.default.sign(loginCredentials[0], process.env['SECRET'], {
-                    expiresIn: '3600s'
+                    expiresIn: '3d'
                 });
                 console.log(token);
                 return res.json({

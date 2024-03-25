@@ -21,5 +21,11 @@ ALTER TABLE users ADD registerDate DATE
 
 ALTER TABLE users ADD phoneNumber VARCHAR(20) NOT NULL
 
+UPDATE users SET role= LOWER(role);
+
+UPDATE users SET role= 'admin' WHERE email = 'muriithikiamad1@gmail.com'
+
+
+
 
 

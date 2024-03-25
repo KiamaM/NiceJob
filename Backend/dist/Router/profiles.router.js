@@ -6,5 +6,6 @@ const verifyToken_1 = require("../Middlewares/verifyToken");
 const profileRouter = (0, express_1.Router)();
 profileRouter.get('/', profile_controller_1.getAllProfiles);
 profileRouter.get('/:id', profile_controller_1.getOneProfile);
+profileRouter.get('/my-profiles/:id', profile_controller_1.getProfilesBySpecialist);
 profileRouter.delete('/delete/:id', verifyToken_1.verifyToken, profile_controller_1.deleteProfile);
 exports.default = profileRouter;
