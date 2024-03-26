@@ -21,6 +21,7 @@ const addReview = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const id = (0, uuid_1.v4)();
         console.log(id);
         const { userId, profileId, review, rating } = req.body;
+        console.log(req.body);
         let result = yield dbhelper.execute('addReview', {
             reviewId: id, userId, profileId, review, rating
         });
@@ -36,7 +37,7 @@ const addReview = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
     catch (error) {
         return res.json({
-            error: error.originalError.info.message
+            error: error
         });
     }
 });

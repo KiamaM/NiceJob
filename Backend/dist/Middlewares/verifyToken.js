@@ -19,7 +19,7 @@ const verifyToken = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
         const token = req.headers['token'];
         if (!token) {
             res.json({
-                error: 'You do not have access'
+                error: 'You do not have access.Kindly login'
             });
         }
         const data = jsonwebtoken_1.default.verify(token, process.env.SECRET);

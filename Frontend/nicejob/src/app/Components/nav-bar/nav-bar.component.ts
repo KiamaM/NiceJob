@@ -5,11 +5,14 @@ import { BackNavigationComponent } from '../back-navigation/back-navigation.comp
 import { RolePromptComponent } from '../role-prompt/role-prompt.component';
 import { SetRoleService } from '../../Services/set-role.service';
 import { AuthService } from '../../Services/auth.service';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ApiService } from '../../Services/api.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [RouterLinkActive, RolePromptComponent, RouterOutlet, CommonModule, RouterLink, BackNavigationComponent],
+  imports: [RouterLinkActive, RolePromptComponent, RouterOutlet, CommonModule, RouterLink, BackNavigationComponent, FormsModule, ReactiveFormsModule],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
@@ -19,8 +22,18 @@ export class NavBarComponent{
 
   isLoggedIn = this.getToken()
 
+  filter = ''
 
-  constructor(private roleService:SetRoleService, private router:Router, private authservice:AuthService, private location:Location){}
+  filteredProfiles: any[] = [];
+  filterForm!: FormGroup
+  query!:string
+
+
+  constructor(private http:HttpClient,private roleService:SetRoleService, private router:Router, private authservice:AuthService, private location:Location, private api:ApiService, private fb:FormBuilder){
+    this.filterForm = this.fb.group({
+      search: ['']
+    })
+  }
 
   getToken(){
     if(typeof window !== 'undefined'){
@@ -80,6 +93,35 @@ export class NavBarComponent{
 
   openDashboard(){
     this.location.back();
+  }
+
+
+  
+
+  getFilteredProducts(){
+    if(this.filterForm.valid){
+      this.query = this.filterForm.value.search
+      console.log(this.filterForm.value.search)
+
+    }
+    // this.filter.get('search')
+    // console.log(this.filterForm.get('search')?.value);
+    
+    // console.log(query);
+
+    this.api.getSpecialistProfiles().subscribe(res=>{
+      // console.log(res);
+      
+      this.filteredProfiles = res.profiles.filter(
+        productsList => productsList?.serviceName.toLowerCase().includes(this.query.toLowerCase())
+
+      );
+
+      console.log(this.filteredProfiles);
+      
+
+    })
+    
   }
 
 

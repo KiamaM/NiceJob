@@ -101,8 +101,12 @@ export class SpecialistsTableComponent {
 
         console.log(this.userId);
         
+        const details = {
+          userId: this.userId,
+          listingId: listingId
+        }
         
-        this.api.scheduleAppointment(this.userId, listingId).subscribe(res=>{
+        this.api.scheduleAppointment(details).subscribe(res=>{
           console.log(res);    
         })
         

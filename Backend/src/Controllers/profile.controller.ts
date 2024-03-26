@@ -12,13 +12,16 @@ export const scheduleAppointment = async(req:Request, res:Response)=>{
         console.log(id);
 
 
-        const{userId,listingId, appointmentDate}:profile = req.body
+        const details:profile = req.body
+
+        console.log(req.body);
+        
 
         
                
 
         let result = await dbhelper.execute('scheduleAppointment', {
-            profileId:id,userId, listingId, appointmentDate
+            profileId:id,userId: details.userId, listingId: details.listingId
         })
         
         if(result.rowsAffected[0] < 1){
@@ -95,7 +98,7 @@ export const getOneProfile = async(req:Request, res:Response)=>{
         const id = req.params.id
 
 
-        let profile = (await dbhelper.execute('getOneProfiles', {userId:id})).recordset
+        let profile = (await dbhelper.execute('getOneProfile', {serviceId:id})).recordset
 
         return res.json({
             profile:profile

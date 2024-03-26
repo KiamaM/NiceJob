@@ -16,5 +16,4 @@ export interface profile{
     closeTime:string
     experience:string
     serviceImage:string
-    listingId:string
 }

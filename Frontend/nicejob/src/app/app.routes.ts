@@ -16,6 +16,9 @@ import { ViewSpecialistsComponent } from './Components/view-specialists/view-spe
 import { ListingsTableComponent } from './Components/listings-table/listings-table.component';
 import { ReviewsComponent } from './Components/reviews/reviews.component';
 import { SpecialistsTableComponent } from './Components/specialists-table/specialists-table.component';
+import { AppointmentsTableComponent } from './Components/appointments-table/appointments-table.component';
+import { DashboardListingsComponent } from './Components/dashboard-listings/dashboard-listings.component';
+import { DashboardSingleProfileComponent } from './Components/dashboard-single-profile/dashboard-single-profile.component';
 
 export const routes: Routes = [
     {path: '', component:LandingPageComponent},
@@ -46,8 +49,11 @@ export const routes: Routes = [
     {path: 'client-dashboard', component:ClientDashboardComponent,
 
     children:[
-        {path: 'specialist-profiles', component:SpecialistsTableComponent}, 
+        {path: 'specialist-profiles', component:DashboardListingsComponent}, 
         {path: 'appointment-page', component:AppointmentPageComponent}, 
+        {path: 'appointments', component:AppointmentsTableComponent},  
+        {path: 'view-profile/:serviceId', component:DashboardSingleProfileComponent},  
+
     ]
 },     
 
@@ -58,7 +64,9 @@ export const routes: Routes = [
     {path: 'specialist-dashboard', component:SpecialistDashboardComponent,
     children:[
         {path: 'reviews', component:ReviewsComponent},   
-        {path: 'dashboard-profiles', component:ListingsTableComponent},  
+        {path: 'dashboard-profiles', component:ListingsTableComponent}, 
+        {path: 'appointments', component:AppointmentsTableComponent},  
+ 
 
     ]
 

@@ -15,19 +15,19 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let profile of profiles; let i = index">
+            <tr *ngFor="let appointment of appointments; let i = index">
                 <td>{{ i + 1 }}.</td>
-                <td>{{profile.serviceName}}</td>
-                <td>{{profile.serviceCategory}}</td>
-                <td>{{profile.experience}}</td>
-                <td>{{profile.rates}}</td>
-                <td>{{profile.location}}</td>
+                <td>{{appointment.serviceName}}</td>
+                <td>{{appointment.serviceCategory}}</td>
+                <td>{{appointment.experience}}</td>
+                <td>{{appointment.rates}}</td>
+                <td>{{appointment.location}}</td>
                 <td>
                     <!-- <span>
                         <button style="cursor: pointer;" routerLink="/update-product/{{user.userId}}" >Edit</button>
                     </span> -->
                     <span>
-                        <button (click)="bookAppointment(profile.serviceId)" id="action-button" style="cursor: pointer;" >Book</button>
+                        <!-- <button (click)="cancelAppointment(appointment.serviceId)" id="action-button" style="cursor: pointer;" >Book</button> -->
                         <!-- <button routerLink="/client-dashboard/appointment-page" id="action-button" style="cursor: pointer;" >Book</button> -->
                     </span>
                 </td>

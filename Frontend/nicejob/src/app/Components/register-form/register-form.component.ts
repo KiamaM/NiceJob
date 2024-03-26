@@ -70,7 +70,6 @@ export class RegisterFormComponent{
         setTimeout(() => {
           this.registerForm.reset()
           this.router.navigate(['login'])
-          console.log('wow');
           
           
         }, 3000);

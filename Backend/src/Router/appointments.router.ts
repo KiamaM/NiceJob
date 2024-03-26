@@ -8,7 +8,7 @@ const appointmentRouter =Router()
 
 appointmentRouter.get('/:id',verifyToken, authorize('client','specialist'), getAppointments)
 appointmentRouter.get('/appointment/:id',verifyToken, authorize('client','specialist'), getOneAppointment)
-appointmentRouter.post('/',verifyToken, scheduleAppointment)
+appointmentRouter.post('/', scheduleAppointment)
 appointmentRouter.put('/reschedule/:id',verifyToken, authorize('client','specialist'), reschedule)
 appointmentRouter.delete('/cancel-appointment/:id',verifyToken, authorize('client', 'specialist'), cancelAppointment)
 
