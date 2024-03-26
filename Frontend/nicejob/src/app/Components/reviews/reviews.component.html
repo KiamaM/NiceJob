@@ -1,0 +1,29 @@
+<div class="reviews">
+    <div class="stars">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <!-- <span>Jan 19,2024</span> -->
+    </div>
+    
+    <div class="rev">
+        <div *ngFor="let profileReview of profileReviews; let i = index">
+            <p>{{ i + 1 }}.</p>
+            <p>{{profileReview.firstName}}</p>
+            <p>{{profileReview.review}}</p>
+            <p>{{profileReview.rating}}</p>
+            <p>{{profileReview.reviewDate}}</p>
+            <p>
+                <!-- <span>
+                    <button style="cursor: pointer;" routerLink="/update-product/{{user.userId}}" >Edit</button>
+                </span> -->
+                <span>
+                    <button id="action-button" style="cursor: pointer;" (click)="deleteReview(profileReview.reviewId)"  >Deactivate</button>
+                </span>
+            </p>
+        </div>
+    </div>
+
+</div>

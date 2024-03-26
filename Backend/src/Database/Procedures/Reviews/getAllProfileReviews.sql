@@ -8,6 +8,11 @@ AS
              END
     ELSE
         BEGIN
-            SELECT * FROM reviews WHERE profileId = @profileId AND isDeleted = 0
+            SELECT * FROM reviews r
+            INNER JOIN users u ON r.userId = u.userId
+            WHERE profileId = @profileId AND r.isDeleted = 0
         END   
      END
+
+
+

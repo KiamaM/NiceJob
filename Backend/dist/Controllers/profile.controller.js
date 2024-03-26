@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getOneAppointment = exports.getAppointments = exports.reschedule = exports.cancelAppointment = exports.deleteProfile = exports.getOneProfile = exports.getAllProfiles = exports.scheduleAppointment = void 0;
+exports.getOneAppointment = exports.getAppointments = exports.reschedule = exports.cancelAppointment = exports.deleteProfile = exports.getOneProfile = exports.getProfilesBySpecialist = exports.getAllProfiles = exports.scheduleAppointment = void 0;
 const dbHelper_1 = __importDefault(require("../dbHelpers/dbHelper"));
 const uuid_1 = require("uuid");
 const dbhelper = new dbHelper_1.default;
@@ -55,6 +55,21 @@ const getAllProfiles = (req, res) => __awaiter(void 0, void 0, void 0, function*
     }
 });
 exports.getAllProfiles = getAllProfiles;
+const getProfilesBySpecialist = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = req.params.id;
+        let profile = (yield dbhelper.execute('getProfilesBySpecialist', { userId: id })).recordset;
+        return res.json({
+            profile: profile
+        });
+    }
+    catch (error) {
+        res.json({
+            error: error.originalError.message
+        });
+    }
+});
+exports.getProfilesBySpecialist = getProfilesBySpecialist;
 const getOneProfile = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = req.params.id;

@@ -2,7 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
-import { LoginComponent } from '../login/login.component';
+import { Router } from '@angular/router';
+import { resetPassword } from '../../Interfaces/users.interface';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -12,11 +14,40 @@ import { LoginComponent } from '../login/login.component';
   styleUrl: './reset-password.component.css'
 })
 export class ResetPasswordComponent {
-successMsg:string =''
-showSuccessMsg:boolean =false
+  errorMsg!:string
+  successMsg!:string
 
-resetPassword(details:any){
+visible = false
+visible2 = false
 
+constructor(private router:Router, private api:AuthService){}
+
+resetPassword(details:resetPassword){
+  this.api.resetPassword(details).subscribe(res=>{
+    console.log(details);
+    
+
+    if(res.error){
+      console.log(res.error);
+      
+      this.visible = true
+      this.errorMsg = res.error
+
+      setTimeout(() => {
+        this.visible = false
+      }, 3000);
+    }else if(res.message){
+      this.visible2 = true
+      this.successMsg = res.message
+
+      setTimeout(() => {
+        this.visible2 = false
+        this.router.navigate(['login'])
+      }, 3000);
+    }
+
+
+  })
 }
 
 }

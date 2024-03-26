@@ -8,7 +8,7 @@ app-nav-bar{
     --categoriesHover:black;
     --categoiesBgColor:rgba(0, 0, 0, 0.062);
     margin-top: 0;
-    
+    z-index: 15;    
 }
 
 .appointmentContainer{

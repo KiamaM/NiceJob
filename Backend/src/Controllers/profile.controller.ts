@@ -63,6 +63,26 @@ export const getAllProfiles = async(req:Request, res:Response)=>{
 }
 
 
+export const getProfilesBySpecialist = async(req:Request, res:Response)=>{
+    try {
+
+        const id = req.params.id
+
+
+        let profile = (await dbhelper.execute('getProfilesBySpecialist', {userId:id})).recordset
+
+        return res.json({
+            profile:profile
+        })
+        
+    } catch (error:any) {
+        res.json({
+            error:error.originalError.message
+        })
+    }
+}
+
+
 
 
 

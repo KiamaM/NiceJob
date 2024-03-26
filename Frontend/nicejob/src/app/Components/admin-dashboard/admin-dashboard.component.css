@@ -40,8 +40,13 @@ app-nav-bar{
   
   .adminContent{
     padding-left: 20px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     height: 120vh;
+    width: 90%;
+  }
+
+  #noProjects{
+    margin-top: 20px;
   }
 
   

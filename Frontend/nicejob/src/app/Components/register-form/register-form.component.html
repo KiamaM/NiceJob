@@ -6,7 +6,7 @@
         </div>
         <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="form-container">
             <div>
-                <h2 class="form-title">{{this.roleService.role}} {{ title }}</h2>
+                <h2 class="form-title">{{ title }}</h2>
             </div>
             <!-- Display error message when msgVisible is true -->
             <div *ngIf="msgVisible" class="error-message">
@@ -54,13 +54,12 @@
             <div class="form-group" id="reg-btn-section">
                     <button  data-cy="create-account-link" type="submit" [disabled]="registerForm.invalid" class="form-submit">Create Account </button>
                 <div class="form-link">
-                    <p (click)="openLoginModal()">Proceed to login?</p>
+                    <p routerlink = "/register">Proceed to login?</p>
                 </div>
             </div>
         </form>
     </div>
 
 </div>
-
 
 

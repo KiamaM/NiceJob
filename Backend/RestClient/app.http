@@ -18,7 +18,7 @@ Content-Type: application/json
 
 GET http://localhost:4500/users/all-clients
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMTg5OTNjZS0yMjllLTQxNDItYTFkMy1hZWZkZTA0YjE4NTUiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJpYXQiOjE3MTA5NzY4MTMsImV4cCI6MTcxMDk4MDQxM30.LOH35ZntFaKgzgvDyyfUs6L3j4imzgknne6V-u2IjtQ
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyZmQzZmQxYy05N2UxLTRjZDMtYmQyMS03MDg4YTlmYjllYWQiLCJmaXJzdE5hbWUiOiJEIiwibGFzdE5hbWUiOiJNIiwicGhvbmVOdW1iZXIiOiIxMjM0NTY3MTIzNCIsInJvbGUiOiJjbGllbnQiLCJlbWFpbCI6Im11cmlpdGhpa2lhbWFkMSsxMjM0QGdtYWlsLmNvbSIsImlhdCI6MTcxMTI2ODc2MCwiZXhwIjoxNzExMjcyMzYwfQ.JIpm_jiqHci0ZteFAN6ZSb825jsISaJmAP3hrfdipOo
 
 
 ###
@@ -26,7 +26,7 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMTg5OTNjZS0yMjllLTQxN
 
 GET http://localhost:4500/users/client/d18993ce-229e-4142-a1d3-aefde04b1855
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhMTAtOWExZC03ZTRiYWM1OWFkZWQiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTc2NTc5LCJleHAiOjE3MTA5ODAxNzl9.4R1lzGQNEPq8yX7vkf0QBOjqJtYMJlOx3Us4RPMMoZQ
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyZmQzZmQxYy05N2UxLTRjZDMtYmQyMS03MDg4YTlmYjllYWQiLCJwaG9uZU51bWJlciI6IjEyMzQ1NjcxMjM0IiwiZW1haWwiOiJtdXJpaXRoaWtpYW1hZDErMTIzNEBnbWFpbC5jb20iLCJpc1dlbGNvbWVkIjp0cnVlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIzVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE3MTExOTUwMjMsImV4cCI6MTcxMTE5ODYyM30.nKCebzrrZtane7vuqI4RTScHbILxHhyE6LIlyanMIIc
 
 
 ###
@@ -67,7 +67,7 @@ Content-Type: application/json
     "lastName":"Sm",
     "phoneNumber":"5553553553553",
     "role":"specialist",
-    "email":"mailon@mail.com",
+    "email":"mailon5@mail.com",
     "password":"test12&34"  
 }
 
@@ -75,15 +75,15 @@ Content-Type: application/json
 
 GET http://localhost:4500/users/all-specialists
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzExMDFjYS1jN2EzLTRlMzUtOTIwMy0zZDkwN2E0MDI0ZjYiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE3MTEwMTk0MjksImV4cCI6MTcxMTAyMzAyOX0.YKfSsF4DO1MkaJCqSDY8LJ68RwKGN_5CPtY7RsNOLVY
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyZmQzZmQxYy05N2UxLTRjZDMtYmQyMS03MDg4YTlmYjllYWQiLCJwaG9uZU51bWJlciI6IjEyMzQ1NjcxMjM0IiwiZW1haWwiOiJtdXJpaXRoaWtpYW1hZDErMTIzNEBnbWFpbC5jb20iLCJpc1dlbGNvbWVkIjp0cnVlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIzVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE3MTExOTUwMjMsImV4cCI6MTcxMTE5ODYyM30.nKCebzrrZtane7vuqI4RTScHbILxHhyE6LIlyanMIIc
 
 
 ###
 
 
-GET http://localhost:4500/users/specialist/3ecb7d15-f5b6-4212-9d0b-0d740034c0f2
+GET http://localhost:4500/users/specialist/d31101ca-c7a3-4e35-9203-3d907a4024f6
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhMTAtOWExZC03ZTRiYWM1OWFkZWQiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTc2NTc5LCJleHAiOjE3MTA5ODAxNzl9.4R1lzGQNEPq8yX7vkf0QBOjqJtYMJlOx3Us4RPMMoZQ
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzExMDFjYS1jN2EzLTRlMzUtOTIwMy0zZDkwN2E0MDI0ZjYiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE3MTEwODY1OTQsImV4cCI6MTcxMTA5MDE5NH0.lhTbFJiux1hkWik4SxXYFyUDS4smYIkgaA3gkkAgCj0
 
 
 ###
@@ -94,20 +94,22 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhM
 
 ###
 
-PUT  http://localhost:4500/users/specialist/update/3ecb7d15-f5b6-4212-9d0b-0d740034c0f2
+PUT  http://localhost:4500/users/specialist/update/d31101ca-c7a3-4e35-9203-3d907a4024f6
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhMTAtOWExZC03ZTRiYWM1OWFkZWQiLCJlbWFpbCI6Im1haWxAbWFpbC5jb20iLCJpc1dlbGNvbWVkIjpmYWxzZSwicmVnaXN0ZXJEYXRlIjoiMjAyNC0wMy0yMVQwMDowMDowMC4wMDBaIiwicGhvbmVOdW1iZXIiOiI1NTUzNTUzNTUzNTUzIiwiaWF0IjoxNzEwOTc2NTc5LCJleHAiOjE3MTA5ODAxNzl9.4R1lzGQNEPq8yX7vkf0QBOjqJtYMJlOx3Us4RPMMoZQ
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzExMDFjYS1jN2EzLTRlMzUtOTIwMy0zZDkwN2E0MDI0ZjYiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJpYXQiOjE3MTEwODY1OTQsImV4cCI6MTcxMTA5MDE5NH0.lhTbFJiux1hkWik4SxXYFyUDS4smYIkgaA3gkkAgCj0
 
 
 
 {
-    "firstName": "Jim",
-    "lastName": "Sm",
-    "phoneNumber": "5553553553553",
-    "email": "mailone2@mail.com",
-    "password": "$2b$05$6fSm"
-
+    "firstName":"Jm",
+    "lastName":"Sm",
+    "phoneNumber":"5553553553553",
+    "role":"specialist",
+    "email":"mailon5@mail.com",
+    "password":"test12&34"  
 }
+
+
 ###
 
 PUT  http://localhost:4500/users/reset-password
@@ -172,6 +174,17 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMTg5OTNjZS0yMjllLTQxN
 
 ###
 
+GET http://localhost:4500/profiles/my-profiles/d31101ca-c7a3-4e35-9203-3d907a4024f6
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMTg5OTNjZS0yMjllLTQxNDItYTFkMy1hZWZkZTA0YjE4NTUiLCJlbWFpbCI6Im1haWxvbkBtYWlsLmNvbSIsImlzV2VsY29tZWQiOmZhbHNlLCJyZWdpc3RlckRhdGUiOiIyMDI0LTAzLTIxVDAwOjAwOjAwLjAwMFoiLCJwaG9uZU51bWJlciI6IjU1NTM1NTM1NTM1NTMiLCJpYXQiOjE3MTA5NzY4MTMsImV4cCI6MTcxMDk4MDQxM30.LOH35ZntFaKgzgvDyyfUs6L3j4imzgknne6V-u2IjtQ
+
+
+
+
+
+
+###
+
 
 GET http://localhost:4500/profiles/d31101ca-c7a3-4e35-9203-3d907a4024f6
 Content-Type: application/json
@@ -199,12 +212,12 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjODFjN2FjZS1hZDFmLTRhM
 ### APPOINTMENTS ENDPONTS
 POST  http://localhost:4500/appointments
 Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyZmQzZmQxYy05N2UxLTRjZDMtYmQyMS03MDg4YTlmYjllYWQiLCJmaXJzdE5hbWUiOiJEIiwibGFzdE5hbWUiOiJNIiwicGhvbmVOdW1iZXIiOiIxMjM0NTY3MTIzNCIsInJvbGUiOiJjbGllbnQiLCJlbWFpbCI6Im11cmlpdGhpa2lhbWFkMSsxMjM0QGdtYWlsLmNvbSIsImlhdCI6MTcxMTMzMzMzNywiZXhwIjoxNzExMzM2OTM3fQ.t-s-kUcYkHpkalJbOKkwxwUVoaFSO6C7Yg2jRwXifmY
 
 {
     "profileId":"",
     "userId":"d31101ca-c7a3-4e35-9203-3d907a4024f6",
-    "listingId":"051deee4-c4fd-48aa-8a66-ce3e233b39b7",
-    "appointmentDate":"01-03-2024"
+    "listingId":"051deee4-c4fd-48aa-8a66-ce3e233b39b7"
 }
 
 ###  Get all appointments

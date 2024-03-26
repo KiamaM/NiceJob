@@ -1,50 +1,45 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component, ElementRef, ViewChild} from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { BackNavigationComponent } from '../back-navigation/back-navigation.component';
 import { RolePromptComponent } from '../role-prompt/role-prompt.component';
 import { SetRoleService } from '../../Services/set-role.service';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [RouterLinkActive, RolePromptComponent, RouterOutlet, RouterLinkActive, CommonModule, RouterLink, BackNavigationComponent],
+  imports: [RouterLinkActive, RolePromptComponent, RouterOutlet, CommonModule, RouterLink, BackNavigationComponent],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent{  
-  // @ViewChild('dialog') dialog!: ElementRef<HTMLDialogElement>;
-  // @ViewChild('regDialog') regDialog!: ElementRef<HTMLDialogElement>;
+
   @ViewChild('rolePrompt') rolePrompt!:ElementRef<HTMLDialogElement>
 
-  constructor(private roleService:SetRoleService, private router:Router){}
+  isLoggedIn = this.getToken()
 
 
+  constructor(private roleService:SetRoleService, private router:Router, private authservice:AuthService, private location:Location){}
 
-  // closeLoginModal() {
-  //   this.dialog.nativeElement.close();
-  //   this.dialog.nativeElement.classList.remove('opened');
-  // }
-
-  openLoginModal() {
-    // this.dialog.nativeElement.showModal();
-    // this.dialog.nativeElement.classList.add('opened');
+  getToken(){
+    if(typeof window !== 'undefined'){
+      return localStorage?.getItem('token') as string
+    }else{
+      return null
+    }
   }
 
-  ngAfterViewInit() {
-    // this.dialog.nativeElement.addEventListener('click', (event: MouseEvent) => {
-    //   const target = event.target as Element;
-    //   if (target.nodeName === 'DIALOG') {
-    //     this.closeLoginModal();
-    //   }
-    // });
+  
 
-    // this.regDialog.nativeElement.addEventListener('click', (event: MouseEvent) => {
-    //   const target = event.target as Element;
-    //   if (target.nodeName === 'DIALOG') {
-    //     this.closeRegisterModal();
-    //   }
-    // });
+  logout(){
+    localStorage.clear()
+    this.router.navigate([''])
+  }
+
+
+
+  ngAfterViewInit() {
 
     this.rolePrompt.nativeElement.addEventListener('click', (event: MouseEvent) => {
       const target = event.target as Element;
@@ -52,17 +47,6 @@ export class NavBarComponent{
         this.closerolePrompt();
       }
     });
-  }
-
-  closeRegisterModal() {
-    // this.regDialog.nativeElement.close();
-    // this.regDialog.nativeElement.classList.remove('opened');
-  }
-
-  openRegisterModal() {
-    // this.regDialog.nativeElement.showModal();
-    // this.regDialog.nativeElement.classList.add('opened');
-    // this.router.navigate(['register'])
   }
 
   closerolePrompt() {
@@ -78,18 +62,24 @@ export class NavBarComponent{
 
   defineSpecialist(){
     this.openrolePrompt()
-    this.roleService.role = 'Specialist'
-    console.log(this.roleService.role);
-    this.rolePrompt.nativeElement.style.display = 'none';
+    this.roleService.role = 'specialist'
+    localStorage.setItem('role', this.roleService.role)
+    this.closerolePrompt()
+    // this.rolePrompt.nativeElement.style.display = 'none';
     this.router.navigate(['register'])
     
   }
 
   defineClient(){
-    this.roleService.role = 'Client'
-    console.log(this.roleService.role);
-    this.rolePrompt.nativeElement.style.display = 'none';
+    this.roleService.role = 'client'
+    localStorage.setItem('role', this.roleService.role)
+    this.closerolePrompt()
+    // this.rolePrompt.nativeElement.style.display = 'none';
     this.router.navigate(['register'])
+  }
+
+  openDashboard(){
+    this.location.back();
   }
 
 

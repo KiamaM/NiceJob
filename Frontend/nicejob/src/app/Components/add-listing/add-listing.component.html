@@ -2,58 +2,71 @@
 <div class="services">
     <div *ngIf="showSuccessMessage" class="successMsg">{{ successMsg }}</div>
 
-    <form id="serviceForm" [formGroup]="serviceForm" (ngSubmit)="onSubmit()">
+    <form id="serviceForm" [formGroup]="serviceForm" (ngSubmit)="createListing()">
         <div class="form-section">
             <!-- service Name -->
             <label for="serviceName">Service Name:</label>
-            <input type="text" id="serviceName" name="serviceName" required />
+            <input type="text" id="serviceName" name="serviceName" required formControlName="serviceName" />
 
             <!-- service Description -->
             <label for="serviceDescription">Profile Overview:</label>
-            <textarea id="serviceDescription" name="serviceDescription" rows="4" required></textarea>
+            <textarea id="serviceDescription" name="serviceDescription" rows="4" required
+                formControlName="serviceDescription"></textarea>
 
             <!-- service Category -->
             <label for="serviceCategory">Service Category:</label>
-            <select id="serviceCategory" name="serviceCategory" required>
-                <option value="electronics">Photography</option>
+            <select id="serviceCategory" name="serviceCategory" required formControlName="serviceCategory">
+                <option value="Photography">Photography</option>
+                <option value="Catering">Catering</option>
+                <option value="Events">Events</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Landscaping">Landscaping</option>
+                <option value="Graphics Design">Graphics Design</option>
                 <!-- To be populated dynamically -->
             </select>
 
             <!-- service Stock -->
             <label for="location">Location</label>
-            <input type="text" id="location" name="location" min="0" required />
+            <input type="text" id="location" name="location" min="0" required formControlName="location" />
             <label for="rates">Rates</label>
-            <input type="number" id="rates" name="rates" min="0" required />
+            <input type="number" id="rates" name="rates" min="0" required formControlName="rates" />
             <label for="experience">Experience</label>
-            <input type="number" id="experience" name="experience" min="0" required />
+            <input type="number" id="experience" name="experience" min="0" required formControlName="experience" />
 
             <!-- service Price -->
             <div class="time">
                 <div class="time-div">
                     <label for="openTime"> Open From:</label>
-                    <input type="datetime-local" id="openTime" name="openTime" step="0.01" min="0" required />
+                    <input type="datetime-local" id="openTime" name="openTime" step="0.01" min="0" required
+                        formControlName="openTime" />
                 </div>
                 <div class="time-div">
                     <label for="closeTime"> To:</label>
-                    <input type="datetime-local" id="closeTime" name="closeTime" step="0.01" min="0" required />
+                    <input type="datetime-local" id="closeTime" name="closeTime" step="0.01" min="0" required
+                        formControlName="closeTime" />
                 </div>
             </div>
         </div>
         <div class="img-and-btn">
             <!-- Image Upload Section -->
             <div class="image-upload-section">
-                <label for="serviceImage">service Image:</label>
+                <label for="productImage">Product Image:</label>
                 <div id="drop-area" (click)="fileInput.click()">
-                    <i class="fa-thin fa-image"></i>
-                    <p>Drop an image here or browse</p>
+                    <i class="fa-solid fa-image"></i>
+                    <p *ngIf="!isLoading">Drop an image here or browse</p>
+                    <p *ngIf="isLoading">Loading....</p>
+                    <div *ngIf="isLoading" class="loader"></div>
+                    <img src="{{serviceForm.value.image}}" alt="" width="70"
+                        style="margin-top:10px; clip-path: circle(40%);">
                 </div>
-                <input type="file" #fileInput id="fileInput" name="serviceImage" accept="image/*" required />
+                <input type="file" #fileInput id="fileInput" name="serviceImage" accept="image/*" required
+                    (change)="uploadImage($event)" />
             </div>
 
             <!-- Add service Button -->
             <div class="btn">
                 <button type="submit">Save</button>
-                <button type="submit" (click)="BackToDashboard()">Cancel</button>
+                <!-- <button routerLink="/specialist-dashboard/dashboard-profiles">Cancel</button> -->
             </div>
         </div>
     </form>

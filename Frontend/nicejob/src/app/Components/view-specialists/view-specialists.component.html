@@ -1,0 +1,49 @@
+<div>
+    <div *ngIf="visible2" class="successDiv" style="color: green; text-align: center; width: 100%; font-size: 14px;">{{successMsg}}</div> 
+    <div *ngIf="visible" class="errorDiv" style="color: red; text-align: center;">{{errorMsg}}</div>  
+    
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Role</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let specialist of specialists; let i = index">
+                <td>{{ i + 1 }}.</td>
+                <td>{{specialist.firstName}}</td>
+                <td>{{specialist.lastName}}</td>
+                <td>{{specialist.role}}</td>
+                <td>{{specialist.email}}</td>
+                <td>{{specialist.phoneNumber}}</td>
+                <td>
+                    <!-- <span>
+                        <button style="cursor: pointer;" routerLink="/update-product/{{user.userId}}" >Edit</button>
+                    </span> -->
+                    <span>
+                        <button id="action-button" style="cursor: pointer;" (click)="deleteSpecialist(specialist.userId)"  >Deactivate</button>
+                    </span>
+                </td>
+            </tr>
+            <!-- <tr *ngIf="products.length === 0">
+                <td colspan="8">Add a product to view</td>
+            </tr> -->
+        </tbody>
+        <!-- <div class="confirm" *ngIf="clickDelete">
+            <p>Confirm Delete</p>
+            <button (click)="deleteProduct(product.productId)">Yes</button>
+            <button>No</button>
+        </div> -->
+    </table>
+
+</div>
+
+
+
+<!-- <router-outlet></router-outlet> -->

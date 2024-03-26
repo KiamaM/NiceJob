@@ -1,0 +1,17 @@
+.reviews{
+    width: 40vw;
+    background-color: rgb(247, 247, 247);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stars span{
+    margin: 10px;
+}
+
+
+.rev{
+    width: 80%;
+}
