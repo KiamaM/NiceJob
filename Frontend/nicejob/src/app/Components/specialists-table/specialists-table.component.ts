@@ -108,6 +108,23 @@ export class SpecialistsTableComponent {
         
         this.api.scheduleAppointment(details).subscribe(res=>{
           console.log(res);    
+          if(res.message){
+            this.successMsg = res.message
+            this.visible2 = true
+
+            setTimeout(() => {
+              this.visible2 = false
+
+            }, 3000);
+          }else{
+            this.errorMsg = res.error
+            this.visible = true
+            
+            setTimeout(() => {
+              this.visible = false
+
+            }, 3000);
+          }
         })
         
       })

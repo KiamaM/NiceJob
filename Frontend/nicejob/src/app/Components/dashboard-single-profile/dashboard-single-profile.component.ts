@@ -78,7 +78,7 @@ profile:any
 
   }
 
-  addReview(reviewValue:string){
+  addReview(){
     if (isPlatformBrowser(this.platformId)) {
       const user = localStorage.getItem('token') as string
       this.authservice.readToken(user).subscribe(res=>{

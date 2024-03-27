@@ -10,7 +10,7 @@
                 <th>Category</th>
                 <th>Experience</th>
                 <th>Rates</th>
-                <th>Open Time</th>
+                <th>image</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,7 +21,7 @@
                 <td>{{profile.serviceCategory}}</td>
                 <td>{{profile.experience}}</td>
                 <td>{{profile.rates}}</td>
-                <td>{{profile.location}}</td>
+                <td><img src="{{profile.serviceImage}}" alt="" width="90"></td>
                 <td>
                     <!-- <span>
                         <button style="cursor: pointer;" routerLink="/update-product/{{user.userId}}" >Edit</button>

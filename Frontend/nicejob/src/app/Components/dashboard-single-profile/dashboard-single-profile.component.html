@@ -54,12 +54,9 @@
                 <i [class.rated] = "rating >=5" (click)="setRating(5)" class="fa-solid fa-star"></i>
                 {{rating}}
             </div>
-            <form #reviewForm = 'ngForm' (ngSubmit)="addReview(reviewForm.value)" >
+            <form #reviewForm = 'ngForm' (ngSubmit)="addReview()" >
                 <textarea name="review" id="" cols="30" rows="10" placeholder="Add a Review" [(ngModel)]="review"></textarea>    
                 <button id = "send" type="submit">Add Review</button>
-                <p>{{review}}</p>
             </form>
-
-
     </div>
 </div>

@@ -27,7 +27,7 @@
                         <button style="cursor: pointer;" routerLink="/update-product/{{user.userId}}" >Edit</button>
                     </span> -->
                     <span>
-                        <button id="action-button" style="cursor: pointer;" (click)="deleteSpecialist(specialist.userId)"  >Deactivate</button>
+                        <button [class.deactivated] = "deleteBtnTxt == 'Activate'" id="action-button" style="cursor: pointer;" (click)="deleteSpecialist(specialist.userId)"  >{{deleteBtnTxt}}</button>
                     </span>
                 </td>
             </tr>

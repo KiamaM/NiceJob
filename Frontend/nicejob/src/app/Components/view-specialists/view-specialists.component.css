@@ -47,6 +47,11 @@ table {
     color: white;
   }
 
+  #action-button:active {
+    background-color:red; /* Dark gray */
+    color: white;
+  }
+
 
   .confirm{
     position: absolute;
@@ -62,4 +67,13 @@ table {
     flex-direction: column;
     justify-content: space-between;
   }
+
+  #action-button{
+
+    &.deactivated{
+        background-color:red;
+    }
+    transition: color 0.2s ease-in-out;
+
+}
   

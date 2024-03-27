@@ -20,6 +20,8 @@ export class ApiService {
   constructor(@Inject(PLATFORM_ID) private platformId: object,private http:HttpClient) { 
     if (isPlatformBrowser(this.platformId)) {
       this.token= localStorage.getItem('token') as string
+      this.getClients()
+      this.getSpecialists()
     }
 
   }
