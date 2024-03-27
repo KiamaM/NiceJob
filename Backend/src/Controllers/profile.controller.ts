@@ -245,3 +245,10 @@ export const getOneAppointment = async(req:Request, res:Response)=>{
 
 
 
+
+
+
+
+
+
+
