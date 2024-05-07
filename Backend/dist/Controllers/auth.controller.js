@@ -48,6 +48,7 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         console.log((_a = user[0]) === null || _a === void 0 ? void 0 : _a.email);
         if (((_b = user[0]) === null || _b === void 0 ? void 0 : _b.email) == email) {
             const correct_pwd = yield bcrypt_1.default.compare(password, user[0].password);
+            console.log(password);
             console.log(user[0].password);
             if (!correct_pwd) {
                 return res.json({

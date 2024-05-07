@@ -28,6 +28,9 @@ export class NavBarComponent{
   filterForm!: FormGroup
   query!:string
 
+  isMenuOpen: boolean = false;
+
+
 
   constructor(private http:HttpClient,private roleService:SetRoleService, private router:Router, private authservice:AuthService, private location:Location, private api:ApiService, private fb:FormBuilder){
     this.filterForm = this.fb.group({
@@ -41,6 +44,10 @@ export class NavBarComponent{
     }else{
       return null
     }
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   

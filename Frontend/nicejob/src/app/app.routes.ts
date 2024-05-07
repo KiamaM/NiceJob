@@ -49,10 +49,11 @@ export const routes: Routes = [
     {path: 'client-dashboard', component:ClientDashboardComponent,
 
     children:[
-        {path: 'specialist-profiles', component:SpecialistsTableComponent}, 
+        {path: 'specialist-profiles', component:DashboardListingsComponent}, 
         {path: 'appointment-page', component:AppointmentPageComponent}, 
         {path: 'appointments', component:AppointmentsTableComponent},  
         {path: 'view-profile/:serviceId', component:DashboardSingleProfileComponent},  
+        {path: 'reviews', component:ReviewsComponent},   
 
     ]
 },     

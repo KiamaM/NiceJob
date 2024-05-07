@@ -40,6 +40,9 @@ export const loginUser = async(req:Request, res:Response)=>{
         if(user[0]?.email == email){
             
             const correct_pwd = await bcrypt.compare(password, user[0].password)
+
+            console.log(password);
+            
             console.log(user[0].password);
             
             if(!correct_pwd){

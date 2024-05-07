@@ -3,8 +3,8 @@ app-nav-bar{
     position: fixed;
     top: 0;
     left: 0;
-    /* width: 98vw; */
-    /* --categoriesWidth:94vw; */
+    width: 100vw;
+    --categoriesWidth:100vw;
     --categoriesHover:black;
     --categoiesBgColor:rgba(0, 0, 0, 0.199);
     margin-top: 0;

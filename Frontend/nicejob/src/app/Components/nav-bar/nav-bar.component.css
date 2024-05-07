@@ -21,6 +21,18 @@
   display: none;
 }
 
+.categories2 {
+  display: none;
+}
+
+.categories.open {
+  display: block;
+}
+
+.categories.open i {
+  display: none;
+}
+
 .logonSearch{
     display: flex;
     align-items: center;

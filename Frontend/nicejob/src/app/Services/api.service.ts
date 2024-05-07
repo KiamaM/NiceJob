@@ -26,7 +26,7 @@ export class ApiService {
 
   }
   
-// CLIents
+// CLients
 
 
   getClients(){
