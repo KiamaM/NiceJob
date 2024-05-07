@@ -20,9 +20,10 @@ const scheduleAppointment = (req, res) => __awaiter(void 0, void 0, void 0, func
     try {
         const id = (0, uuid_1.v4)();
         console.log(id);
-        const { userId, listingId, appointmentDate } = req.body;
+        const details = req.body;
+        console.log(req.body);
         let result = yield dbhelper.execute('scheduleAppointment', {
-            profileId: id, userId, listingId, appointmentDate
+            profileId: id, userId: details.userId, listingId: details.listingId
         });
         if (result.rowsAffected[0] < 1) {
             return res.json({
@@ -73,7 +74,7 @@ exports.getProfilesBySpecialist = getProfilesBySpecialist;
 const getOneProfile = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = req.params.id;
-        let profile = (yield dbhelper.execute('getOneProfiles', { userId: id })).recordset;
+        let profile = (yield dbhelper.execute('getOneProfile', { serviceId: id })).recordset;
         return res.json({
             profile: profile
         });

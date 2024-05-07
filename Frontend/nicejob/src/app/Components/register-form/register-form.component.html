@@ -9,7 +9,7 @@
                 <h2 class="form-title">{{ title }}</h2>
             </div>
             <!-- Display error message when msgVisible is true -->
-            <div *ngIf="msgVisible" class="error-message">
+            <div data-cy="IncorrectPw" *ngIf="msgVisible" class="error-message">
                 {{ errorMsg }}
             </div>
     
@@ -42,7 +42,7 @@
 
             </div>
             <div class="form-group">
-                <input type="hidden" value="role" formControlName = "role" style="height: 5px;">
+                <input data-cy="role" type="hidden" value="role" formControlName = "role" style="height: 5px;">
             </div>
             <div class="form-group">
                 <label>Password*</label> <br>

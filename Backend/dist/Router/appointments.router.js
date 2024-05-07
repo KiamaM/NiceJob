@@ -7,7 +7,7 @@ const auth_controller_1 = require("../Controllers/auth.controller");
 const appointmentRouter = (0, express_1.Router)();
 appointmentRouter.get('/:id', verifyToken_1.verifyToken, (0, auth_controller_1.authorize)('client', 'specialist'), profile_controller_1.getAppointments);
 appointmentRouter.get('/appointment/:id', verifyToken_1.verifyToken, (0, auth_controller_1.authorize)('client', 'specialist'), profile_controller_1.getOneAppointment);
-appointmentRouter.post('/', verifyToken_1.verifyToken, profile_controller_1.scheduleAppointment);
+appointmentRouter.post('/', profile_controller_1.scheduleAppointment);
 appointmentRouter.put('/reschedule/:id', verifyToken_1.verifyToken, (0, auth_controller_1.authorize)('client', 'specialist'), profile_controller_1.reschedule);
 appointmentRouter.delete('/cancel-appointment/:id', verifyToken_1.verifyToken, (0, auth_controller_1.authorize)('client', 'specialist'), profile_controller_1.cancelAppointment);
 exports.default = appointmentRouter;

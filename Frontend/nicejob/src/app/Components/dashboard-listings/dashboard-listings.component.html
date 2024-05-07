@@ -1,0 +1,62 @@
+<div class="listingsContainer">
+    <!-- <app-nav-bar></app-nav-bar>     -->
+
+    <div class="filters">
+        <h4>Filter By</h4>
+        <div class="filterBy">
+            <span>Location<i class="fa-solid fa-angle-down"></i></span>
+            <span>Price<i class="fa-solid fa-angle-down"></i></span>
+            <span>Ratings<i class="fa-solid fa-angle-down"></i></span>
+        </div>
+        <input type="text" name="search" id="searchField" placeholder="Search for a category" [(ngModel)]="filter">
+    </div> 
+    <div class="listItem">
+        <div class="item" *ngFor="let profile of profiles  | searchPipe: filter; let i = index">
+            <div class="portfolio">
+                <img src="{{profile.serviceImage}}" alt="image">
+            </div>
+            <div class="desc">
+                <h3>{{profile.serviceName}}</h3>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>5.0(1.7K)</span>
+                </div>
+                <p>{{profile.experience}} Years in business</p>
+                <button routerLink="/client-dashboard/view-profile/{{profile.serviceId}}">View Listing</button>
+            </div>   
+        </div>     
+        <div class="item">
+            <div class="portfolio">
+                <img src=".././../../assets/Photography img.jpg" alt="">
+            </div>
+            <div class="desc">
+                <h3>Fork and Knife Catering Services</h3>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>5.0(1.7K)</span>
+                </div>
+                <p>25 Years in Business</p>
+                <button routerLink="/listing-profile">View Listing</button>
+            </div>   
+        </div>  
+    </div>
+    <!-- <app-footer></app-footer> -->
+</div>
+
+<!-- <tbody>
+    <tr *ngFor="let profile of profiles; let i = index">
+        <td>{{ i + 1 }}.</td>
+        <td>{{profile.serviceName}}</td>
+        <td>{{profile.serviceCategory}}</td>
+        <td>{{profile.experience}}</td>
+        <td>{{profile.rates}}</td>
+        <td>{{profile.location}}</td>
+        <td>
+
+            <span>
+                <button id="action-button" style="cursor: pointer;" (click)="deleteSpecialistProfile(profile.userId)"  >Delete</button>
+            </span>
+        </td>
+    </tr>
+
+</tbody> -->

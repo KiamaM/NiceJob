@@ -35,6 +35,7 @@ export class ReviewsComponent {
 
   getReviews(){
     this.api.getReviews().subscribe(res=>{
+
       console.log(res);      
       console.log(this.reviews);
       

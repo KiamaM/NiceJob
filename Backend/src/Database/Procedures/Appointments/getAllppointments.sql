@@ -8,6 +8,10 @@ AS
              END
     ELSE
         BEGIN
-            SELECT * FROM specialistProfile  WHERE isBooked = 1 AND userId = @userId AND isCancelled = 0
+            SELECT * FROM specialistProfile s
+            INNER JOIN listings l ON l.userId = s.userId
+            INNER JOIN users u ON u.userId = s.userId
+            WHERE s.isBooked = 1 AND s.userId = @userId AND s.isCancelled = 0
         END
     END
+

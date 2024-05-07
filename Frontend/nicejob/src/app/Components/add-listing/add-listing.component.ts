@@ -1,11 +1,13 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterOutlet } from '@angular/router';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { FooterComponent } from '../footer/footer.component';
 import { BackNavigationComponent } from '../back-navigation/back-navigation.component';
 import { ApiService } from '../../Services/api.service';
+import { AuthService } from '../../Services/auth.service';
+import { newListing } from '../../Interfaces/listing.interface';
 
 @Component({
   selector: 'app-add-listing',
@@ -30,8 +32,9 @@ export class AddListingComponent {
 
   serviceForm!: FormGroup
   showSuccessMessage: boolean = false
+  userId!:string
 
-  constructor(private router: Router, private fb: FormBuilder, private api:ApiService) {
+  constructor(@Inject(PLATFORM_ID) private platformId: object, private router: Router, private fb: FormBuilder, private api:ApiService, private authservice:AuthService) {
     this.serviceForm = this.fb.group({
       serviceName: ['', Validators.required],
       serviceDescription: ['', Validators.required],
@@ -93,38 +96,68 @@ export class AddListingComponent {
   
 
   createListing(){
-    console.log(this.serviceForm.value);
+    if (isPlatformBrowser(this.platformId)) {
+      const user = localStorage.getItem('token') as string
+      this.authservice.readToken(user).subscribe(res=>{
+        console.log(res.info.userId);
+        this.userId = res.info.userId
+        console.log(this.serviceForm.value);
     
-    const listingDetails = this.serviceForm.value
-    console.log(listingDetails);
+        const listingDetails = {
+          serviceName: this.serviceForm.get('serviceName')?.value,
+          serviceDescription:this.serviceForm.get('serviceDescription')?.value ,
+          serviceCategory: this.serviceForm.get('serviceCategory')?.value,
+          location: this.serviceForm.get('location')?.value,
+          rates:this.serviceForm.get('rates')?.value,
+          experience: this.serviceForm.get('experience')?.value,
+          openTime: this.serviceForm.get('openTime')?.value,
+          closeTime: this.serviceForm.get('closeTime')?.value,
+          serviceImage: this.serviceForm.get('serviceImage')?.value,
+          serviceId:'',
+          userId:this.userId
+        }
+        console.log(listingDetails);
+        console.log(this.userId);
+        console.log(res.message);
+        
+        
+        
     
-
-    this.api.addListing(listingDetails).subscribe(response=>{
-      if(response.message){
-        console.log(response);
-        setTimeout(() => {
-          this.serviceForm.reset()   
-          this.router.navigate(['specialist-dashboard'])      
-          
-        }, 3000);
-
-
-      }else{
-        this.msgVisible = true
-        this.errorMsg = response.error
-        setTimeout(() => {
-          this.msgVisible = false
-        }, 5000);
-      }
-
-
-
-        
-      },
-      error=>{
-        console.error(error);
-        
+        this.api.addListing(listingDetails).subscribe(response=>{
+          if(response.message){
+            console.log(response);
+            this.showSuccessMessage = true
+            this.successMsg = res.message
+            setTimeout(() => {
+              this.serviceForm.reset()   
+              this.showSuccessMessage = false
+              // this.router.navigate(['specialist-dashboard'])      
+              
+            }, 3000);
+    
+    
+          }else{
+            console.log(response.error);
+            
+            this.msgVisible = true
+            this.errorMsg = response.error
+            setTimeout(() => {
+              this.msgVisible = false
+            }, 5000);
+          }
+    
+    
+    
+            
+          },
+          error=>{
+            console.error(error);
+            
+          })
       })
+    }
+
+
 
     } 
 

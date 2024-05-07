@@ -2,9 +2,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { updatedUser, users } from '../Interfaces/users.interface';
 import { profile } from '../Interfaces/profile.interface';
-import { profileReviews, reviews } from '../Interfaces/reviews.interface';
+import { newReview, profileReviews, reviews } from '../Interfaces/reviews.interface';
 import { newListing } from '../Interfaces/listing.interface';
 import { isPlatformBrowser } from '@angular/common';
+import { userAppointments } from '../Interfaces/appointment.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +20,13 @@ export class ApiService {
   constructor(@Inject(PLATFORM_ID) private platformId: object,private http:HttpClient) { 
     if (isPlatformBrowser(this.platformId)) {
       this.token= localStorage.getItem('token') as string
+      this.getClients()
+      this.getSpecialists()
     }
 
   }
   
-// CLIents
+// CLients
 
 
   getClients(){
@@ -121,8 +124,8 @@ export class ApiService {
     })
   }
 
-  getOneSpecialistProfile(userId:string){
-    return this.http.get<{profiles:profile, error: string}>(`http://localhost:4500/profiles/${userId}`, {
+  getOneSpecialistProfile(serviceId:string){
+    return this.http.get<{profile:profile[], error: string}>(`http://localhost:4500/profiles/${serviceId}`, {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'token': this.token
@@ -154,7 +157,7 @@ export class ApiService {
 
 
   addListing(listingDetails:newListing){
-    return this.http.post<{message:string, error:string}>('http://localhost:4500/listings', listingDetails)
+    return this.http.post<{message:string, error:string}>('http://localhost:4500/listings', listingDetails )
   }
 
 
@@ -166,8 +169,8 @@ export class ApiService {
 
 
 
-  getAppointments(){
-    return this.http.get<{users:users[], error: string}>(' http://localhost:4500/appointments', {
+  getAppointments(userId:string){
+    return this.http.get<{appointments:userAppointments[],message:string, error: string}>(`http://localhost:4500/appointments/${userId}`, {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'token': this.token
@@ -176,12 +179,14 @@ export class ApiService {
   }
 
 
-  scheduleAppointment(userId:string, listingId:string){
-    return this.http.post<{message:string, error:string}>('http://localhost:4500/appointments', {userId, listingId}, {
-      headers: new HttpHeaders({
-        'Content-type': 'application/json',
-        'token': this.token
-      })
+  scheduleAppointment(Details: details){
+    console.log(Details);
+    
+    return this.http.post<{message:string, error:string}>('http://localhost:4500/appointments', Details, {
+      // headers: new HttpHeaders({
+      //   'Content-type': 'application/json',
+      //   'token': this.token
+      // })
     })
   }
 
@@ -191,6 +196,11 @@ export class ApiService {
 
 
   //Reviews
+
+  addReviews(userId:string, profileId:string, review:string,rating:number ){
+    return this.http.post<{message:string, error:string}>('http://localhost:4500/reviews', {userId: userId,profileId: profileId,review: review, rating: rating})
+  }
+
 
 
 
@@ -258,4 +268,8 @@ updateReview(id:string, details:updatedUser){
 
 
 
+}
+interface details{
+  userId: string,
+  listingId: string
 }

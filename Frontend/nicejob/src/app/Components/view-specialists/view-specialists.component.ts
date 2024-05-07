@@ -20,6 +20,8 @@ export class ViewSpecialistsComponent {
   visible = false
   visible2 = false
 
+  deleteBtnTxt = 'Deactivate'
+
 
   id!:string
 

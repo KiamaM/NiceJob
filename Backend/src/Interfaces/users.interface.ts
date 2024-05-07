@@ -19,6 +19,18 @@ export interface loginUserDetails{
     isDeleted:string
 }
 
+export interface client{
+    userId:string
+    firstName:string
+    lastName:string
+    phoneNumber:string 
+    role:string
+    email:string
+    password:string
+    isWelcomed:string
+    isDeleted:string
+}
+
 export interface updatedUser{
     firstName:string
     lastName:string 

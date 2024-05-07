@@ -1,0 +1,66 @@
+<div class="listingProfileContainer">
+    <div *ngIf="visible2" class="successDiv" style="color: green; text-align: center; width: 100%; font-size: 14px;">{{successMsg}}</div> 
+    <div *ngIf="visible" class="errorDiv" style="color: red; text-align: center;">{{errorMsg}}</div>  
+    <div class="content">
+        <div class="top">
+            <h2>Fork and Knife Catering Services</h2>
+        </div>
+        <div class="image">
+            <img src={{profile.serviceImage}} alt="image">
+            <img src={{profile.serviceImage}} alt="image">
+            <img src={{profile.serviceImage}} alt="image">
+            <img src={{profile.serviceImage}} alt="image">
+        </div>
+        <div class="rateAvailable">
+        </div>
+        <div class="service">
+            <p>{{profile.experience}} Years in business</p>
+            <p>Opens: {{profile.openTime | date:'shortTime'}}  to {{profile.closeTime  | date:'shortTime'}}</p>
+            <p>Daily Rate: Ksh {{profile.rates}}</p>
+        </div>
+        <div class="buttons">
+            <button (click)="bookAppointment(profile.serviceId)"><i class="fa-regular fa-calendar-check"></i>  Make a Reservation</button>
+            <!-- <button><i class="fa-solid fa-message"></i> Chat</button> -->
+            <button (click)="scrollToReview()"><i class="fa-regular fa-star-half-stroke"></i> Write a Review</button>
+        </div>
+        <div class="about">
+            <h3>About Us</h3>
+            <p> {{profile.serviceDescription}}</p>
+            <p>Kindly schedule an appointment to customize the food options to your liking. <br> Thank you.</p>
+        </div>
+        <h3>Reviews</h3>
+        <div class="profile">
+            <div class="name">
+                <img src="../../../assets/prof Pic.jpg" alt="" width="80" style="clip-path: circle(50%);">    
+                <span>Billy S.</span>
+            </div>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span>Jan 19,2024</span>
+            </div>
+        </div>
+
+        <div class="rev">
+            <p>Had a clogged shower drain. Called Eric and he was able to fit me in the following afternoon. He even called to let me know he was on his way, which I really appreciated so I could inform my wife (since I was at work). They came out, diagnosed the problem quickly, and he felt confident he could take care of it with his snake or vacuum. But said that if that didn't work, he could recommend a guy with blower. I really appreciated that he was ready to connect us with someone else if he wasn't able to fix it. But that wasn't necessary as they were able to clear the clog pretty quickly and at a very reasonable price. I love the fact that they're a small, local business and we'll definitely be using Eric and his team again for any future plumbing issues.</p>
+        </div>
+            <div class="starRating">
+                <span>Rate Us</span>  
+                <div *ngIf="visible2" class="successDiv" style="color: green; text-align: center; width: 100%; font-size: 14px;">{{successMsg}}</div> 
+                <div *ngIf="visible" class="errorDiv" style="color: red; text-align: center;">{{errorMsg}}</div>                
+                <i [class.rated] = "rating >=1" (click)="setRating(1)" class="fa-solid fa-star"></i>
+                <i [class.rated] = "rating >=2" (click)="setRating(2)" class="fa-solid fa-star"></i>
+                <i [class.rated] = "rating >=3" (click)="setRating(3)" class="fa-solid fa-star"></i>
+                <i [class.rated] = "rating >=4" (click)="setRating(4)" class="fa-solid fa-star"></i>
+                <i [class.rated] = "rating >=5" (click)="setRating(5)" class="fa-solid fa-star"></i>
+                {{rating}}
+            </div>
+            <form #reviewForm = 'ngForm' (ngSubmit)="addReview()" >
+                <textarea name="review" id="" cols="30" rows="10" placeholder="Add a Review" [(ngModel)]="review"></textarea>    
+                <button id = "send" type="submit">Add Review</button>
+            </form>
+    </div>
+</div>

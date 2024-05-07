@@ -1,0 +1,50 @@
+<div>
+    <div *ngIf="visible2" class="successDiv" style="color: green; text-align: center; width: 100%; font-size: 14px;">{{successMsg}}</div> 
+    <div *ngIf="visible" class="errorDiv" style="color: red; text-align: center;">{{errorMsg}}</div>  
+    
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Service Name</th>
+                <th>Category</th>
+                <th>Experience</th>
+                <th>Rates</th>
+                <th>Open Time</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appointment of appointments; let i = index">
+                <td>{{ i + 1 }}.</td>
+                <td>{{appointment.serviceName}}</td>
+                <td>{{appointment.serviceCategory}}</td>
+                <td>{{appointment.experience}}</td>
+                <td>{{appointment.rates}}</td>
+                <td>{{appointment.location}}</td>
+                <td>
+                    <!-- <span>
+                        <button style="cursor: pointer;" routerLink="/update-product/{{user.userId}}" >Edit</button>
+                    </span> -->
+                    <span>
+                        <!-- <button (click)="cancelAppointment(appointment.serviceId)" id="action-button" style="cursor: pointer;" >Book</button> -->
+                        <!-- <button routerLink="/client-dashboard/appointment-page" id="action-button" style="cursor: pointer;" >Book</button> -->
+                    </span>
+                </td>
+            </tr>
+            <!-- <tr *ngIf="products.length === 0">
+                <td colspan="8">Add a product to view</td>
+            </tr> -->
+        </tbody>
+        <!-- <div class="confirm" *ngIf="clickDelete">
+            <p>Confirm Delete</p>
+            <button (click)="deleteProduct(product.productId)">Yes</button>
+            <button>No</button>
+        </div> -->
+    </table>
+
+</div>
+
+
+
+<!-- <router-outlet></router-outlet> -->

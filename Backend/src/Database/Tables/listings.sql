@@ -27,6 +27,8 @@ ALTER TABLE listings ADD activeDate DATE
 
 ALTER TABLE listings ADD userId VARCHAR(100) NOT NULL
 
+UPDATE  listings SET serviceImage = ''
+
 ALTER TABLE listings
 ADD CONSTRAINT FK_listings_users FOREIGN KEY (userId) REFERENCES users(userId);
 

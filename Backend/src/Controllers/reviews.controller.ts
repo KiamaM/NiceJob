@@ -14,6 +14,7 @@ export const addReview = async(req:Request, res:Response)=>{
 
         const{userId,profileId, review, rating}:reviews = req.body
 
+        console.log(req.body);
         
                
 
@@ -36,7 +37,7 @@ export const addReview = async(req:Request, res:Response)=>{
     } catch (error:any) {
         return res.json({
             
-            error:error.originalError.info.message
+            error:error
         })
     }
 }

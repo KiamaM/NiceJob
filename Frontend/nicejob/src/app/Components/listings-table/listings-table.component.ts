@@ -31,6 +31,7 @@ export class ListingsTableComponent {
 
   constructor(private api:ApiService){
     this.getProfilesBySpecialist(this.userId)
+    this.getSpecialistProfiles()
   }
 
   getSpecialistProfiles(){

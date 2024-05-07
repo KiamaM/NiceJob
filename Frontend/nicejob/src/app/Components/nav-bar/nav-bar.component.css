@@ -21,6 +21,18 @@
   display: none;
 }
 
+.categories2 {
+  display: none;
+}
+
+.categories.open {
+  display: block;
+}
+
+.categories.open i {
+  display: none;
+}
+
 .logonSearch{
     display: flex;
     align-items: center;
@@ -31,6 +43,7 @@
 .search{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: white;
     border-radius: 6px;
     padding: 5px;
@@ -38,8 +51,19 @@
     font-weight: 100;
 }
 
+.search button{
+  background-color: transparent;
+  border: none;
+
+}
+
 .search svg{
     color: gray;
+    padding-right: 10px;
+}
+
+.filterForm{
+  display: flex;
 }
 
 #searchField{

@@ -2,23 +2,23 @@
     <div class="nav">        
         <div class="logonSearch">
 
-            <i id="hamburger" class="fa-solid fa-bars"></i>
+            <i id="hamburger" class="fa-solid fa-bars" (click)="toggleMenu()"></i>
 
-            <img src="../../../assets/strive-craft-high-resolution-logo-transparent (2).png" alt="" width="70px" id="logoImg" style="cursor: pointer;" routerLink="/">
+            <img data-cy="logo"  src="../../../assets/strive-craft-high-resolution-logo-transparent (2).png" alt="" width="70px" id="logoImg" style="cursor: pointer;" routerLink="/">
             <div class="search">
-                <input type="text" name="search" id="searchField" placeholder="Search">
+                <input type="text" name="search" id="searchField" placeholder="Category" [(ngModel)]="filter">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                   </svg>
             </div>
         </div>
         <div class="links">
-            <span *ngIf="!isLoggedIn"  (click)=" defineSpecialist()" >Apply as a specialist</span>
-            <span  *ngIf="!isLoggedIn" id="login" routerLink="/login">Login</span>
-            <button *ngIf="!isLoggedIn" (click)="  openrolePrompt() " id="signUp">Sign Up</button>
+            <span data-cy="specialist-signUp" *ngIf="!isLoggedIn"  (click)=" defineSpecialist()" >Apply as a specialist</span>
+            <span data-cy="login-link"  *ngIf="!isLoggedIn" id="login" routerLink="/login">Login</span>
+            <button data-cy="signUp" *ngIf="!isLoggedIn" (click)="  openrolePrompt() " id="signUp">Sign Up</button>
             <span  *ngIf="isLoggedIn">Notifications</span>
             <span  *ngIf="isLoggedIn" (click)="openDashboard()">Profile</span>
-            <button *ngIf="isLoggedIn" (click)="  logout() " id="signUp">Logout</button>
+            <button data-cy="logoutBtn" *ngIf="isLoggedIn" (click)="  logout() " id="signUp">Logout</button>
         </div>
     </div>
 </div>
@@ -34,6 +34,17 @@
     </div>
 </div>
 
+
+<div class="categories2" [ngClass]="{'open': isMenuOpen}">
+    <app-back-navigation></app-back-navigation>
+    <div >Professional Photography<i class="fa-solid fa-angle-down"></i></div>
+    <div >Catering <i class="fa-solid fa-angle-down"></i></div>
+    <div >Professional Cleaning <i class="fa-solid fa-angle-down"></i></div>
+    <div >Weddings and Events <i class="fa-solid fa-angle-down"></i></div>
+    <div >Landscaping <i class="fa-solid fa-angle-down"></i></div>
+    <div >Graphic Design <i class="fa-solid fa-angle-down"></i></div>
+  </div>
+
 <!-- <dialog type="modal" id="dialog" class="drawer" #dialog>
         <app-login></app-login>
 </dialog>
@@ -43,11 +54,11 @@
     <app-register-form></app-register-form>
 </dialog> -->
 
-<dialog class="roleModal" type ="modal" #rolePrompt>
+<dialog data-cy="rolePrompt" class="roleModal" type ="modal" #rolePrompt>
     <h2>Choose Your Role</h2>
     <div class="roleButtons">
-        <button (click)="defineSpecialist()" id="specialistBtn">Specialist</button>
-        <button (click)="defineClient()" id="clientBtn">Client</button>
+        <button data-cy="specialistRole" (click)="defineSpecialist()" id="specialistBtn">Specialist</button>
+        <button data-cy="clientBtn" (click)="defineClient()" id="clientBtn">Client</button>
     </div>
 </dialog>
 

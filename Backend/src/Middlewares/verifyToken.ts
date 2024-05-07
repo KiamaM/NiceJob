@@ -16,7 +16,7 @@ export const verifyToken =async(req:extendeUserRequest, res:Response, next:NextF
 
         if(!token){
             res.json({
-                error: 'You do not have access'
+                error: 'You do not have access.Kindly login'
             })
         }
         const data = jwt.verify(token, process.env.SECRET as string) as loginUserDetails

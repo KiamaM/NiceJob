@@ -6,9 +6,9 @@
         <div class="sidebarNav">
             <button><i class="fa-solid fa-house"></i>Dashboard</button>
             <!-- <button ><i class="fa-solid fa-user-group"></i>Specialists</button> -->
-            <button><i class="fa-regular fa-star"></i>Reviews</button>
+            <button routerLInk="/client-dashboard/reviews"><i class="fa-regular fa-star"></i>Reviews</button>
             <button routerLink="/client-dashboard/specialist-profiles"><i class="fa-solid fa-list-check"></i>Listings</button>
-            <button><i class="fa-solid fa-exclamation"></i>Appointments</button>
+            <button routerLink="/client-dashboard/appointments"><i class="fa-solid fa-exclamation"></i>Appointments</button>
             <!-- <button><i class="fa-solid fa-message"></i>Messages</button> -->
             <!-- <button><i class="fa-solid fa-file-invoice-dollar"></i>Payments</button> -->
         </div>
@@ -19,7 +19,7 @@
         </div>
         <div class="adminContent">
             <router-outlet></router-outlet>
-            <p id = 'noProjects'>Nothing to show at the moment. Activity will be displayed here</p>
+            <!-- <p id = 'noProjects'>Nothing to show at the moment. Activity will be displayed here</p> -->
         </div>
     </div>
 

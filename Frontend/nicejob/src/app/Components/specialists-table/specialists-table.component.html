@@ -10,7 +10,7 @@
                 <th>Category</th>
                 <th>Experience</th>
                 <th>Rates</th>
-                <th>Open Time</th>
+                <th>image</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,13 +21,13 @@
                 <td>{{profile.serviceCategory}}</td>
                 <td>{{profile.experience}}</td>
                 <td>{{profile.rates}}</td>
-                <td>{{profile.location}}</td>
+                <td><img src="{{profile.serviceImage}}" alt="" width="90"></td>
                 <td>
                     <!-- <span>
                         <button style="cursor: pointer;" routerLink="/update-product/{{user.userId}}" >Edit</button>
                     </span> -->
                     <span>
-                        <button (click)="bookAppointment(profile.listingId)" id="action-button" style="cursor: pointer;" >Book</button>
+                        <button (click)="bookAppointment(profile.serviceId)" id="action-button" style="cursor: pointer;" >Book</button>
                         <!-- <button routerLink="/client-dashboard/appointment-page" id="action-button" style="cursor: pointer;" >Book</button> -->
                     </span>
                 </td>

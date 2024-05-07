@@ -1,0 +1,8 @@
+{
+    "firstName": "John",
+    "lastName":"Doe",
+    "phoneNumber":"123451234523",
+    "email": "hello@cypress.io",
+    "role":"client",
+    "password":"12345678"
+}
